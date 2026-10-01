@@ -1,0 +1,45 @@
+name: Plaatsen (avond)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nostalgiemagie
+
+jobs:
+  plaatsen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installeren
+        run: pip install requests
+      - name: Noodrem checken en plaatsen
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          PAGES_URL: ${{ vars.PAGES_URL }}
+          DRY_RUN: ${{ vars.DRY_RUN }}
+        run: python publish.py
+      - name: Vernieuwde Instagram-token bewaren
+        if: always() && hashFiles('new_token.txt') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          gh secret set IG_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY" < new_token.txt
+          rm new_token.txt
+      - name: Status opslaan
+        if: always()
+        run: |
+          git config user.name "nostalgiemagie-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git diff --cached --quiet || git commit -m "Status $(TZ=Europe/Amsterdam date +%F)"
+          git push

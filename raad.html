@@ -1,0 +1,26 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=VT323&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden}
+body{background:#F2E8D5;color:#1E1B18;font-family:'Source Serif 4',Georgia,serif}
+.kop{font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:1.02;letter-spacing:-1px}
+.tt{font-family:'VT323',monospace;letter-spacing:2px}
+.logo{font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:1}
+.logo i{font-weight:700;color:#9E2B25}
+.ster{display:inline-block;vertical-align:middle}
+
+
+.wrap{width:1080px;height:1350px;padding:72px;display:flex;flex-direction:column;gap:30px}
+.foto{flex-grow:1;border:2px solid #1E1B18;background:#E4D6BC center/cover no-repeat;filter:sepia(.25) contrast(1.05)}
+.optie{border:2px solid #1E1B18;border-radius:999px;padding:16px 0;text-align:center;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:40px}
+
+</style></head><body><div class="wrap">
+<div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1E1B18;padding-bottom:18px"><div class="tt" style="font-size:32px;letter-spacing:3px;color:#9E2B25">RAAD HET JAAR</div><svg class="ster" width="36" height="36" viewBox="0 0 24 24"><path d="M12 1.5 L14.2 9.8 L22.5 12 L14.2 14.2 L12 22.5 L9.8 14.2 L1.5 12 L9.8 9.8 Z" fill="#D89A2B"/></svg></div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px">
+<div class="kop" style="font-size:100px;line-height:.95;letter-spacing:-2px">Welk jaar<br>is dit?</div>
+<div class="kop" style="font-style:italic;font-size:150px;line-height:.85;color:#D89A2B;-webkit-text-stroke:3px #1E1B18">19??</div></div>
+<div class="foto" style="background-image:url('{{foto_url}}')"></div>
+<div style="font-size:28px;font-style:italic">{{hint}}</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"><div class="optie">A · {{a}}</div><div class="optie">B · {{b}}</div><div class="optie">C · {{c}}</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:24px">Gok in de reacties, swipe voor het antwoord</div><div class="logo" style="font-size:30px">Nostalgie<i>magie</i></div></div>
+</div></body></html>

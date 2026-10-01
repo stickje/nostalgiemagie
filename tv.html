@@ -1,0 +1,29 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=VT323&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden}
+body{background:#F2E8D5;color:#1E1B18;font-family:'Source Serif 4',Georgia,serif}
+.kop{font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:1.02;letter-spacing:-1px}
+.tt{font-family:'VT323',monospace;letter-spacing:2px}
+.logo{font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:1}
+.logo i{font-weight:700;color:#9E2B25}
+.ster{display:inline-block;vertical-align:middle}
+
+
+.wrap{width:1080px;height:1350px;padding:56px;display:flex;flex-direction:column;gap:32px}
+.scherm{flex-grow:1;background:#0B0B0F;border-radius:56px;border:14px solid #1E1B18;padding:48px 52px;display:flex;flex-direction:column;gap:28px;color:#F2E8D5}
+.balk{display:grid;grid-template-columns:repeat(4,1fr);height:14px}
+.tekst{flex-grow:1;border:2px dashed #3FD0E0;border-radius:12px;padding:36px;font-size:36px;line-height:1.4;display:flex;align-items:center}
+.fast{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;font-family:'VT323',monospace;font-size:30px;line-height:1}
+
+</style></head><body><div class="wrap"><div class="scherm">
+<div class="tt" style="display:flex;justify-content:space-between;font-size:38px;line-height:1;letter-spacing:0"><span style="color:#F5D90A">P888 NOSTALGIEMAGIE</span><span style="color:#3FD0E0">{{datum}}</span></div>
+<div class="balk"><div style="background:#9E2B25"></div><div style="background:#3FB950"></div><div style="background:#F5D90A"></div><div style="background:#3FD0E0"></div></div>
+<div class="tt" style="font-size:40px;letter-spacing:3px;color:#F5D90A">VERGETEN TV</div>
+<div class="kop" style="font-size:{{kop_size}};color:#F2E8D5">{{naam}}</div>
+<div class="tt" style="font-size:38px;color:#3FD0E0;letter-spacing:0">{{omroep_jaren}}</div>
+<div class="tekst">{{tekst}}</div>
+<div class="fast"><div style="color:#FF6B5E">WEET JE</div><div style="color:#5EE07A">HET</div><div style="color:#F5D90A">NOG</div><div style="color:#3FD0E0">?</div></div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center"><div><span class="logo" style="font-size:40px">Nostalgie<i>magie</i></span> <svg class="ster" width="28" height="28" viewBox="0 0 24 24"><path d="M12 1.5 L14.2 9.8 L22.5 12 L14.2 14.2 L12 22.5 L9.8 14.2 L1.5 12 L9.8 9.8 Z" fill="#D89A2B"/></svg></div><div style="font-size:20px;font-style:italic">Bron: Wikipedia</div></div>
+</div></body></html>
