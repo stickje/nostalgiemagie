@@ -8,7 +8,7 @@ import random
 import sys
 import traceback
 
-from nm import config, render, sources, telegram, writer
+import config, render, sources, telegram, writer
 
 JUBILEA = (25, 40, 50, 60, 75, 100)
 
@@ -137,6 +137,7 @@ def opruimen(d):
 
 
 def main():
+    os.makedirs(config.POSTS_DIR, exist_ok=True)
     d = config.vandaag()
     state = laad_state()
     makers = {"dag": maak_dag, "tv": maak_tv, "raad": maak_raad}

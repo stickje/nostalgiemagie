@@ -32,10 +32,10 @@ DAGEN = ["maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag", "
 # Rubriek per weekdag (0 = maandag).
 RUBRIEKEN = {0: "dag", 1: "dag", 2: "tv", 3: "dag", 4: "raad", 5: "dag", 6: "dag"}
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.abspath(__file__))
 POSTS_DIR = os.path.join(ROOT, "docs", "posts")
-STATE_FILE = os.path.join(ROOT, "state", "used.json")
-TEMPLATES_DIR = os.path.join(ROOT, "templates")
+STATE_FILE = os.path.join(ROOT, "used.json")
+TEMPLATES_DIR = ROOT
 
 
 def vandaag() -> dt.date:

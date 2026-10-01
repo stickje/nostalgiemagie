@@ -3,7 +3,7 @@ import json
 
 import requests
 
-from .config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 
 API = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
 SKIP_WOORDEN = ("overslaan", "skip", "stop")

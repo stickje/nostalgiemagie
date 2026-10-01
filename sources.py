@@ -5,7 +5,7 @@ import re
 
 import requests
 
-from .config import datum_lang
+from config import datum_lang
 
 UA = {"User-Agent": "NostalgiemagieBot/1.0 (Instagram-pagina @nostalgiemagie)"}
 WIKI = "https://nl.wikipedia.org/w/api.php"

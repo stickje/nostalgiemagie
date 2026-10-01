@@ -3,7 +3,7 @@ import time
 
 import requests
 
-from .config import IG_ACCESS_TOKEN, IG_API_VERSION, IG_USER_ID
+from config import IG_ACCESS_TOKEN, IG_API_VERSION, IG_USER_ID
 
 BASE = f"https://graph.instagram.com/{IG_API_VERSION}"
 

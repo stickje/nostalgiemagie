@@ -4,7 +4,7 @@ import re
 
 import anthropic
 
-from .config import ANTHROPIC_API_KEY, CLAUDE_MODEL
+from config import ANTHROPIC_API_KEY, CLAUDE_MODEL
 
 SYSTEEM = """Je bent de redacteur van Nostalgiemagie, een Nederlandse Instagrampagina die elke dag
 een stukje Nederland van vroeger laat zien.

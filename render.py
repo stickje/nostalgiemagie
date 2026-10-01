@@ -6,7 +6,7 @@ import re
 from PIL import Image
 from playwright.sync_api import sync_playwright
 
-from .config import TEMPLATES_DIR
+from config import TEMPLATES_DIR
 
 BREEDTE, HOOGTE = 1080, 1350
 

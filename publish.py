@@ -6,7 +6,7 @@ import time
 
 import requests
 
-from nm import config, instagram, telegram
+import config, instagram, telegram
 
 
 def bewaar(pad, post):
