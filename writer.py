@@ -24,17 +24,34 @@ Harde regels:
 - Antwoord UITSLUITEND met één geldig JSON-object, zonder uitleg of codeblok."""
 
 
-def _vraag(opdracht: str) -> dict:
-    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-    antwoord = client.messages.create(
-        model=CLAUDE_MODEL,
-        max_tokens=1500,
-        system=SYSTEEM,
-        messages=[{"role": "user", "content": opdracht}],
-    )
-    tekst = "".join(b.text for b in antwoord.content if getattr(b, "type", "") == "text")
+def _lees_json(tekst: str) -> dict:
     tekst = re.sub(r"```(?:json)?", "", tekst).strip()
-    return json.loads(tekst[tekst.index("{"): tekst.rindex("}") + 1])
+    begin, eind = tekst.find("{"), tekst.rfind("}")
+    if begin < 0 or eind < begin:
+        raise ValueError("geen JSON in het antwoord")
+    return json.loads(tekst[begin: eind + 1])
+
+
+def _vraag(opdracht: str, pogingen: int = 3) -> dict:
+    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    berichten = [{"role": "user", "content": opdracht}]
+    fout, tekst = None, ""
+    for _ in range(pogingen):
+        antwoord = client.messages.create(model=CLAUDE_MODEL, max_tokens=4000, system=SYSTEEM, messages=berichten)
+        tekst = "".join(b.text for b in antwoord.content if getattr(b, "type", "") == "text")
+        try:
+            if antwoord.stop_reason == "max_tokens":
+                raise ValueError("antwoord afgekapt")
+            return _lees_json(tekst)
+        except ValueError as ex:  # json.JSONDecodeError is ook een ValueError
+            fout = ex
+            print(f"Onbruikbaar antwoord ({ex}): {tekst[:500]!r}")
+            berichten = [{"role": "user", "content": opdracht},
+                         {"role": "assistant", "content": tekst.strip() or "(leeg)"},
+                         {"role": "user", "content": "Dat was geen geldig JSON-object. Antwoord nu uitsluitend met "
+                                                     "het gevraagde JSON-object, zonder andere tekst."}]
+    kort = " ".join(tekst.split())[:200] or "(leeg antwoord)"
+    raise RuntimeError(f"Claude gaf {pogingen}x geen bruikbaar antwoord ({fout}). Begin van het antwoord: {kort}")
 
 
 def schrijf_dag(datum_tekst: str, huidig_jaar: int, events: list) -> dict:
