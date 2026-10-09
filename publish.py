@@ -1,17 +1,10 @@
 """Avondrun: controleert de noodrem en plaatst de post op Instagram."""
-import json
-import os
 import sys
 import time
 
 import requests
 
-import config, instagram, telegram
-
-
-def bewaar(pad, post):
-    with open(pad, "w", encoding="utf-8") as f:
-        json.dump(post, f, ensure_ascii=False, indent=1)
+import config, instagram, noodrem, telegram
 
 
 def wacht_op_afbeeldingen(urls):
@@ -24,20 +17,13 @@ def wacht_op_afbeeldingen(urls):
 
 def plaatsen():
     d = config.vandaag().isoformat()
-    pad = os.path.join(config.POSTS_DIR, f"{d}.json")
-    if not os.path.exists(pad):
+    noodrem.verwerken()
+    post = noodrem.lees(d)
+    if not post:
         telegram.bericht(f"Er staat geen post klaar voor {d}. Is de ochtendrun gelukt?")
         return 1
-    with open(pad, encoding="utf-8") as f:
-        post = json.load(f)
     if post.get("status") in ("geplaatst", "overgeslagen"):
         print(f"Al afgehandeld: {post['status']}")
-        return 0
-
-    if telegram.is_overgeslagen(d):
-        post["status"] = "overgeslagen"
-        bewaar(pad, post)
-        telegram.bericht(f"Oké, de post van {d} is overgeslagen. Morgen gewoon weer een nieuwe.")
         return 0
 
     urls = [f"{config.PAGES_URL}/posts/{naam}" for naam in post["afbeeldingen"]]
@@ -47,7 +33,7 @@ def plaatsen():
 
     if config.DRY_RUN:
         post["status"] = "proef"
-        bewaar(pad, post)
+        noodrem.bewaar(d, post)
         telegram.bericht(f"Proefmodus: de post van {d} zou nu geplaatst zijn. Er is niets op Instagram gezet.")
         return 0
 
@@ -58,7 +44,7 @@ def plaatsen():
         return 1
     post["status"] = "geplaatst"
     post["link"] = link
-    bewaar(pad, post)
+    noodrem.bewaar(d, post)
     telegram.bericht(f"Geplaatst! {link}")
     return 0
 

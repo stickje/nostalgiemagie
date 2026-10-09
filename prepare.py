@@ -6,9 +6,10 @@ import json
 import os
 import random
 import sys
+import time
 import traceback
 
-import config, render, sources, telegram, writer
+import config, noodrem, render, sources, telegram, writer
 
 JUBILEA = (25, 40, 50, 60, 75, 100)
 
@@ -136,36 +137,75 @@ def opruimen(d):
             pass
 
 
-def main():
-    os.makedirs(config.POSTS_DIR, exist_ok=True)
-    d = config.vandaag()
-    state = laad_state()
-    makers = {"dag": maak_dag, "tv": maak_tv, "raad": maak_raad}
+MAKERS = {"dag": maak_dag, "tv": maak_tv, "raad": maak_raad}
+AFGEHANDELD = ("klaar", "geplaatst", "overgeslagen", "proef")
+
+
+def maak_post(d, state):
+    """Maakt de post voor datum d, bewaart hem en stuurt het voorbeeld. Geeft de JSON terug."""
     rubriek = config.RUBRIEKEN[d.weekday()]
     try:
-        try:
-            post = makers[rubriek](d, state)
-        except Exception:
-            if rubriek == "dag":
-                raise
-            traceback.print_exc()
-            print("Terugvallen op 'Op deze dag'")
-            post = maak_dag(d, state)
-
-        basis = os.path.join(config.POSTS_DIR, d.isoformat())
-        paden = render.render(post["slides"], basis)
-        caption = caption_maken(post)
-        with open(basis + ".json", "w", encoding="utf-8") as f:
-            json.dump({"datum": d.isoformat(), "rubriek": post["rubriek"], "caption": caption,
-                       "afbeeldingen": [os.path.basename(p) for p in paden], "status": "klaar"},
-                      f, ensure_ascii=False, indent=1)
-        bewaar_state(state)
-        opruimen(d)
-        telegram.voorbeeld(paden, caption, d.isoformat(), post["rubriek"], post["controle"])
-        print(f"Klaar: {post['rubriek']} voor {d}")
-    except Exception as ex:
+        post = MAKERS[rubriek](d, state)
+    except Exception:
+        if rubriek == "dag":
+            raise
         traceback.print_exc()
-        telegram.bericht(f"Nostalgiemagie kon vandaag ({d}) geen post maken.\nFout: {ex}")
+        print("Terugvallen op 'Op deze dag'")
+        post = maak_dag(d, state)
+
+    paden = render.render(post["slides"], os.path.join(config.POSTS_DIR, d.isoformat()))
+    caption = caption_maken(post)
+    uit = post["uit"]
+    data = {"datum": d.isoformat(), "rubriek": post["rubriek"],
+            "titel": uit.get("kop") or uit.get("naam") or uit.get("hint") or "",
+            "caption": caption, "afbeeldingen": [os.path.basename(p) for p in paden], "status": "klaar"}
+    noodrem.bewaar(d.isoformat(), data)
+    bewaar_state(state)
+    try:
+        telegram.voorbeeld(paden, caption, d.isoformat(), post["rubriek"], post["controle"])
+    except Exception as ex:  # post staat klaar, alleen het voorbeeld kwam niet aan
+        traceback.print_exc()
+        telegram.bericht(f"Post voor {config.dag_label(d)} staat klaar, maar het voorbeeld kon niet "
+                         f"verstuurd worden ({ex}).\n\n{caption[:1500]}", knop_datum=d.isoformat())
+    return data
+
+
+def main():
+    os.makedirs(config.POSTS_DIR, exist_ok=True)
+    start = config.vandaag()
+    dagen = max(1, min(14, int(os.environ.get("DAGEN") or 1)))
+    noodrem.verwerken()
+    state = laad_state()
+
+    regels, mislukt = [], 0
+    for i in range(dagen):
+        d = start + dt.timedelta(days=i)
+        label = config.dag_label(d)
+        bestaand = noodrem.lees(d.isoformat())
+        if bestaand and bestaand.get("status") in AFGEHANDELD:
+            regels.append(f"{label}: {bestaand.get('rubriek', '')}, {bestaand.get('titel', '')} [{bestaand['status']}]")
+            if dagen == 1 and bestaand["status"] == "klaar":
+                telegram.bericht(f"Vanavond om 18.00 uur gaat online: {bestaand.get('titel') or bestaand['rubriek']} "
+                                 f"({bestaand['rubriek']}). Niet goed? Tik op Overslaan.", knop_datum=d.isoformat())
+            continue
+        try:
+            data = maak_post(d, state)
+            regels.append(f"{label}: {data['rubriek']}, {data['titel']}")
+            print(f"Klaar: {data['rubriek']} voor {d}")
+        except Exception as ex:
+            traceback.print_exc()
+            mislukt += 1
+            regels.append(f"{label}: MISLUKT")
+            telegram.bericht(f"Nostalgiemagie kon geen post maken voor {label}.\nFout: {ex}")
+        if dagen > 1:
+            time.sleep(2)  # Telegram niet overspoelen
+
+    opruimen(start)
+    if dagen > 1:
+        telegram.bericht("Planning:\n\n" + "\n".join(regels) +
+                         "\n\nElke dag om 18.00 uur gaat de post van die dag online. "
+                         "Overslaan kan met de knop onder het voorbeeld, of stuur 'overslaan 14-10'.")
+    if mislukt == dagen:
         sys.exit(1)
 
 

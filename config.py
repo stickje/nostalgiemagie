@@ -47,3 +47,7 @@ def vandaag() -> dt.date:
 
 def datum_lang(d: dt.date) -> str:
     return f"{d.day} {MAANDEN[d.month - 1]}"
+
+
+def dag_label(d: dt.date) -> str:
+    return f"{DAGEN[d.weekday()]} {datum_lang(d)}"

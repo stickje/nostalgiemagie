@@ -42,9 +42,23 @@ Lukt een rubriek niet, dan valt het script terug op "Op deze dag". Lukt helemaal
 
 Ga naar het tabblad **Actions**, kies *Voorbereiden (ochtend)* en klik op *Run workflow*. Bij "datum" kun je een datum invullen om bijvoorbeeld een vrijdag (Raad het jaar) of woensdag (Vergeten TV) te testen. Daarna kun je *Plaatsen (avond)* handmatig draaien. In proefmodus krijg je alleen een Telegram-bericht dat de post geplaatst zou zijn.
 
+## Week vooruit plannen
+
+Ga naar **Actions → Voorbereiden (ochtend) → Run workflow** en vul bij "dagen" `7` in (bij "datum" eventueel een startdatum, leeg = vandaag).
+Je krijgt per dag een voorbeeld in Telegram met een knop **Overslaan**, en aan het eind een overzicht van de week.
+Elke avond om 18.00 uur gaat de post van die dag online. Dagen die al gepland zijn worden niet opnieuw gemaakt;
+de ochtendrun stuurt dan alleen een herinnering met de knop.
+
+Overslaan kan op drie manieren:
+- de knop onder het voorbeeld van die dag (ook dagen vooruit);
+- een bericht `overslaan` (de post van vandaag);
+- een bericht `overslaan 14-10` (de post van 14 oktober).
+
+Let op: Telegram bewaart berichten aan de bot maar 24 uur. Zolang de ochtend- en avondjobs dagelijks draaien is dat geen probleem.
+
 ## Aanpassen
 
-- Toon en regels voor Claude: `nm/writer.py`
-- Vormgeving: `templates/*.html`
-- Rubriek per weekdag: `nm/config.py`
-- Welke TV-categorieën: `nm/sources.py`
+- Toon en regels voor Claude: `writer.py`
+- Vormgeving: `dag.html`, `raad.html`, `raad-antwoord.html`
+- Rubriek per weekdag: `config.py`
+- Welke TV-categorieën: `sources.py` (rubriek staat nu uit; `tv.html` ontbreekt)

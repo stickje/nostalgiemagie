@@ -4,8 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       datum:
-        description: "Optioneel: datum om te testen (JJJJ-MM-DD)"
+        description: "Optioneel: startdatum (JJJJ-MM-DD), leeg = vandaag"
         required: false
+      dagen:
+        description: "Aantal dagen vooruit plannen (1 = alleen vandaag, 7 = hele week)"
+        required: false
+        default: "1"
 
 permissions:
   contents: write
@@ -32,6 +36,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PAGES_URL: ${{ vars.PAGES_URL }}
           DATUM: ${{ github.event.inputs.datum }}
+          DAGEN: ${{ github.event.inputs.dagen }}
         run: python prepare.py
       - name: Opslaan
         if: always()
@@ -39,5 +44,6 @@ jobs:
           git config user.name "nostalgiemagie-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs used.json
-          git diff --cached --quiet || git commit -m "Post voor $(TZ=Europe/Amsterdam date +%F)"
+          git diff --cached --quiet || git commit -m "Posts gepland $(TZ=Europe/Amsterdam date +%F)"
+          git pull --rebase
           git push
