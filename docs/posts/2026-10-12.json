@@ -1,13 +1,13 @@
 {
  "datum": "2026-10-12",
- "status": "kiezen",
- "keuze": null,
+ "status": "klaar",
+ "keuze": 0,
  "versie": 1,
  "opties": [
   {
    "rubriek": "Op deze dag",
-   "titel": "Curry en Van Inkel starten op Hilversum 3",
-   "caption": "In 1984 zenden Adam Curry en Jeroen van Inkel hun eerste aflevering uit op Hilversum 3. 📻 Welk radioprogramma uit je jeugd zette jij altijd aan?\n\n#nostalgie #vroeger #radio #hilversum3 #adamcurry #jaren80 #nederlandseradio",
+   "titel": "Curry & Van Inkel starten op Hilversum 3",
+   "caption": "In 1984 zenden Adam Curry (@adamc1999) en Jeroen van Inkel (@jeroenvaninkel) hun eerste aflevering uit op Hilversum 3. 📻  Het duo introduceerde een aanpak die geïnspireerd was op Amerikaanse radiostations uit de jaren tachtig, met strakke jingles, tempo en brutaliteit. \n\nWelk radioprogramma zette jij altijd aan?\n\n📸 Foto: Privéarchief Jeroen van Inkel\n\n#nostalgie #vroeger #radio #hilversum3 #adamcurry #jeroenvaninkel",
    "afbeeldingen": [
     "2026-10-12-o1-1.jpg"
    ],
@@ -16,11 +16,11 @@
      "template": "dag.html",
      "waarden": {
       "datum": "Maandag 12 oktober 1984",
-      "kop": "Curry en Van Inkel starten op Hilversum 3",
-      "ondertitel": "Op 12 oktober 1984 is de eerste aflevering van Curry en Van Inkel te horen.",
+      "kop": "Curry & Van Inkel starten op Hilversum 3",
+      "ondertitel": "Op 12 oktober 1984 is de eerste aflevering van Curry & Van Inkel te horen.",
       "jaren": 42,
       "jaar": 1984,
-      "foto": ""
+      "foto": "2026-10-12-eigen-1.jpg"
      }
     }
    ],
@@ -70,5 +70,25 @@
    ],
    "controle": "Wikipedia (1977): Het Nederlands voetbalelftal wint in Belfast met 1-0 van Noord-Ierland in de kwalificatiereeks voor het WK voetbal 1978 in Argentinië. PSV'er Willy van de Kerkhof maakt in de 74ste minuut het enige do"
   }
- ]
+ ],
+ "rubriek": "Op deze dag",
+ "titel": "Curry & Van Inkel starten op Hilversum 3",
+ "caption": "In 1984 zenden Adam Curry (@adamc1999) en Jeroen van Inkel (@jeroenvaninkel) hun eerste aflevering uit op Hilversum 3. 📻  Het duo introduceerde een aanpak die geïnspireerd was op Amerikaanse radiostations uit de jaren tachtig, met strakke jingles, tempo en brutaliteit. \n\nWelk radioprogramma zette jij altijd aan?\n\n📸 Foto: Privéarchief Jeroen van Inkel\n\n#nostalgie #vroeger #radio #hilversum3 #adamcurry #jeroenvaninkel",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Maandag 12 oktober 1984",
+    "kop": "Curry & Van Inkel starten op Hilversum 3",
+    "ondertitel": "Op 12 oktober 1984 is de eerste aflevering van Curry & Van Inkel te horen.",
+    "jaren": 42,
+    "jaar": 1984,
+    "foto": "2026-10-12-eigen-1.jpg"
+   }
+  }
+ ],
+ "afbeeldingen": [
+  "2026-10-12-o1-1.jpg"
+ ],
+ "aangepast": "2026-10-10T10:50+02:00"
 }
