@@ -1,13 +1,13 @@
 {
  "datum": "2026-10-16",
- "status": "kiezen",
- "keuze": null,
+ "status": "klaar",
+ "keuze": 0,
  "versie": 1,
  "opties": [
   {
    "rubriek": "Raad het jaar",
    "titel": "Drie auto's vechten om plek vier, vijf en zes.",
-   "caption": "Halverwege de Grand Prix van Nederland strijden drie coureurs om plek vier, vijf en zes 🏎️. Eén van hen eindigt uiteindelijk als tweede. Welk jaar denk jij, zet je gok in de reacties en swipe voor het antwoord?\n\nFoto: Pereira, Fernando / Anefo / Nationaal Archief (CC BY-SA 3.0)\n\n#nostalgie #vroeger #raadhetjaar #formule1 #grandprixvannederland #autosport #racen",
+   "caption": "Marco van Basten scoort met een fenomenale omhaal tegen FC Den Bosch ⚽️ Een Eredivisie-doelpunt voor de eeuwigheid! Maar in welk jaar maakte hij deze legendarische goal? \n\nZet je gok in de reacties en swipe voor het antwoord! 👉\n\n#marcovanbasten #ajax #nostalgiemagie #raadhetjaar #voetbal",
    "afbeeldingen": [
     "2026-10-16-o1-1.jpg",
     "2026-10-16-o1-2.jpg"
@@ -16,19 +16,19 @@
     {
      "template": "raad.html",
      "waarden": {
-      "foto": "2026-10-16-o3-foto.jpg",
-      "hint": "Drie auto's vechten om plek vier, vijf en zes.",
-      "a": 1966,
-      "b": 1980,
-      "c": 1991
+      "foto": "2026-10-16-eigen-1.png",
+      "hint": "Onlangs is er een dramaserie over deze legendarische spits verschenen. Wanneer maakte hij deze omhaal op eigen bodem?",
+      "a": "1982",
+      "b": "1984",
+      "c": "1986"
      }
     },
     {
      "template": "raad-antwoord.html",
      "waarden": {
-      "jaar": 1980,
-      "letter": "B",
-      "uitleg": "Arnoux (Renault) leidt het gevecht om plek vier, vijf en zes in de Grand Prix van Nederland, voor Andretti (Lotus) en Reutemann (Williams)."
+      "jaar": 1986,
+      "letter": "c",
+      "uitleg": "Marco van Basten maakte zijn legendarische omhaal op 9 november 1986."
      }
     }
    ],
@@ -78,5 +78,33 @@
    ],
    "controle": "Wikipedia (1985): Het Nederlands voetbalelftal verliest in de play-offs voor deelname aan het WK voetbal 1986 de eerste wedstrijd van België. Frank Vercauteren tekent voor de enige treffer, nadat Oranje al na vier minu"
   }
- ]
+ ],
+ "rubriek": "Raad het jaar",
+ "titel": "Drie auto's vechten om plek vier, vijf en zes.",
+ "caption": "Marco van Basten scoort met een fenomenale omhaal tegen FC Den Bosch ⚽️ Een Eredivisie-doelpunt voor de eeuwigheid! Maar in welk jaar maakte hij deze legendarische goal? \n\nZet je gok in de reacties en swipe voor het antwoord! 👉\n\n#marcovanbasten #ajax #nostalgiemagie #raadhetjaar #voetbal",
+ "slides": [
+  {
+   "template": "raad.html",
+   "waarden": {
+    "foto": "2026-10-16-eigen-1.png",
+    "hint": "Onlangs is er een dramaserie over deze legendarische spits verschenen. Wanneer maakte hij deze omhaal op eigen bodem?",
+    "a": "1982",
+    "b": "1984",
+    "c": "1986"
+   }
+  },
+  {
+   "template": "raad-antwoord.html",
+   "waarden": {
+    "jaar": 1986,
+    "letter": "c",
+    "uitleg": "Marco van Basten maakte zijn legendarische omhaal op 9 november 1986."
+   }
+  }
+ ],
+ "afbeeldingen": [
+  "2026-10-16-o1-1.jpg",
+  "2026-10-16-o1-2.jpg"
+ ],
+ "aangepast": "2026-10-10T13:00+02:00"
 }
