@@ -1,7 +1,7 @@
 {
  "datum": "2026-10-11",
- "status": "kiezen",
- "keuze": null,
+ "status": "klaar",
+ "keuze": 1,
  "versie": 1,
  "opties": [
   {
@@ -29,7 +29,7 @@
   {
    "rubriek": "Op deze dag",
    "titel": "Juliana opent vernieuwde Moerdijkbrug",
-   "caption": "Op 11 oktober 1978 opende koningin Juliana de vernieuwde Moerdijkbrug over het Hollands Diep. Een brug die je waarschijnlijk wel eens bent overgestoken 🌉. Welke reis over de Moerdijkbrug is jou het meest bijgebleven?\n\n#nostalgie #vroeger #moerdijkbrug #koninginjuliana #jarenzeventig #hollandsdiep #nederlandvroeger",
+   "caption": "Op 11 oktober 1978 opende koningin Juliana de vernieuwde Moerdijkbrug over het Hollands Diep. Een brug die je waarschijnlijk wel eens bent overgestoken! 🌉\n\nWelk koningin Juliana-moment is jou het meest bijgebleven? \n\n#nostalgie #vroeger #moerdijkbrug #koninginjuliana #jarenzeventig",
    "afbeeldingen": [
     "2026-10-11-o2-1.jpg"
    ],
@@ -42,7 +42,7 @@
       "ondertitel": "Op 11 oktober 1978 opende koningin Juliana de vernieuwde brug over het Hollands Diep.",
       "jaren": 48,
       "jaar": 1978,
-      "foto": ""
+      "foto": "2026-10-11-eigen-1.jpg"
      }
     }
    ],
@@ -70,5 +70,25 @@
    ],
    "controle": "Wikipedia (1995): Onder meer dankzij een hattrick van Marc Overmars wint het Nederlands voetbalelftal met 4-0 van Malta in de EK-kwalificatiereeks."
   }
- ]
+ ],
+ "rubriek": "Op deze dag",
+ "titel": "Juliana opent vernieuwde Moerdijkbrug",
+ "caption": "Op 11 oktober 1978 opende koningin Juliana de vernieuwde Moerdijkbrug over het Hollands Diep. Een brug die je waarschijnlijk wel eens bent overgestoken! 🌉\n\nWelk koningin Juliana-moment is jou het meest bijgebleven? \n\n#nostalgie #vroeger #moerdijkbrug #koninginjuliana #jarenzeventig",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Zondag 11 oktober 1978",
+    "kop": "Juliana opent vernieuwde Moerdijkbrug",
+    "ondertitel": "Op 11 oktober 1978 opende koningin Juliana de vernieuwde brug over het Hollands Diep.",
+    "jaren": 48,
+    "jaar": 1978,
+    "foto": "2026-10-11-eigen-1.jpg"
+   }
+  }
+ ],
+ "afbeeldingen": [
+  "2026-10-11-o2-1.jpg"
+ ],
+ "aangepast": "2026-10-10T10:56+02:00"
 }
