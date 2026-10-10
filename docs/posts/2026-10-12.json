@@ -2,14 +2,14 @@
  "datum": "2026-10-12",
  "status": "klaar",
  "keuze": 0,
- "versie": 1,
+ "versie": 2,
  "opties": [
   {
    "rubriek": "Op deze dag",
    "titel": "Curry & Van Inkel starten op Hilversum 3",
    "caption": "In 1984 zenden Adam Curry (@adamc1999) en Jeroen van Inkel (@jeroenvaninkel) hun eerste aflevering uit op Hilversum 3. 📻  Het duo introduceerde een aanpak die geïnspireerd was op Amerikaanse radiostations uit de jaren tachtig, met strakke jingles, tempo en brutaliteit. \n\nWelk radioprogramma zette jij altijd aan?\n\n📸 Foto: Privéarchief Jeroen van Inkel\n\n#nostalgie #vroeger #radio #hilversum3 #adamcurry #jeroenvaninkel",
    "afbeeldingen": [
-    "2026-10-12-o1-1.jpg"
+    "2026-10-12-o1-v2-1.jpg"
    ],
    "slides": [
     {
@@ -88,7 +88,7 @@
   }
  ],
  "afbeeldingen": [
-  "2026-10-12-o1-1.jpg"
+  "2026-10-12-o1-v2-1.jpg"
  ],
  "aangepast": "2026-10-10T10:50+02:00"
 }
