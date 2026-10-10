@@ -1,0 +1,74 @@
+{
+ "datum": "2026-10-12",
+ "status": "kiezen",
+ "keuze": null,
+ "versie": 1,
+ "opties": [
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Curry en Van Inkel starten op Hilversum 3",
+   "caption": "In 1984 zenden Adam Curry en Jeroen van Inkel hun eerste aflevering uit op Hilversum 3. 📻 Welk radioprogramma uit je jeugd zette jij altijd aan?\n\n#nostalgie #vroeger #radio #hilversum3 #adamcurry #jaren80 #nederlandseradio",
+   "afbeeldingen": [
+    "2026-10-12-o1-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Maandag 12 oktober 1984",
+      "kop": "Curry en Van Inkel starten op Hilversum 3",
+      "ondertitel": "Op 12 oktober 1984 is de eerste aflevering van Curry en Van Inkel te horen.",
+      "jaren": 42,
+      "jaar": 1984,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1984): De eerste aflevering van Curry en Van Inkel met Adam Curry en Jeroen van Inkel wordt uitgezonden op Hilversum 3."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Marga Klompé wordt eerste vrouwelijke minister",
+   "caption": "In 1956 wordt Marga Klompé de eerste vrouwelijke minister van Nederland. 🏛️ Welke vrouw uit de Nederlandse politiek is jou het meest bijgebleven?\n\nFoto: Collectie SPAARNESTAD PHOTO/W.P. v.d. Hoef / Nationaal Archief (CC BY-SA 3.0 nl)\n\n#nostalgie #vroeger #margaklompe #geschiedenis #jaren50 #nederlandsepolitiek #eerstevrouw",
+   "afbeeldingen": [
+    "2026-10-12-o2-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Maandag 12 oktober 1956",
+      "kop": "Marga Klompé wordt eerste vrouwelijke minister",
+      "ondertitel": "In 1956 krijgt Nederland voor het eerst een vrouw als minister.",
+      "jaren": 70,
+      "jaar": 1956,
+      "foto": "2026-10-12-o2-foto.jpg"
+     }
+    }
+   ],
+   "controle": "Wikipedia (1956): Marga Klompé wordt de eerste vrouwelijke minister van Nederland.\nFoto (1956): Marga Klompé (1912-1986), KVP-politica en Nederlands eerste vrouwelijke minister. Nederland, 22 februari 1956."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Van de Kerkhof bezorgt Oranje zege in Belfast",
+   "caption": "In 1977 wint Oranje in Belfast met 1-0 van Noord-Ierland, door een treffer van Willy van de Kerkhof in de 74ste minuut. Voor Willy van der Kuylen is het zijn laatste interland. ⚽ Welk Oranje-duel uit die tijd staat jou nog het best bij?\n\n#nostalgie #vroeger #oranje #voetbal #jaren70 #wk1978 #psv #nederlandselftal",
+   "afbeeldingen": [
+    "2026-10-12-o3-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Maandag 12 oktober 1977",
+      "kop": "Van de Kerkhof bezorgt Oranje zege in Belfast",
+      "ondertitel": "Oranje wint in 1977 met 1-0 van Noord-Ierland, op weg naar het WK in Argentinië.",
+      "jaren": 49,
+      "jaar": 1977,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1977): Het Nederlands voetbalelftal wint in Belfast met 1-0 van Noord-Ierland in de kwalificatiereeks voor het WK voetbal 1978 in Argentinië. PSV'er Willy van de Kerkhof maakt in de 74ste minuut het enige do"
+  }
+ ]
+}

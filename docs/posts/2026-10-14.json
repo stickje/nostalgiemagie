@@ -1,0 +1,74 @@
+{
+ "datum": "2026-10-14",
+ "status": "kiezen",
+ "keuze": null,
+ "versie": 1,
+ "opties": [
+  {
+   "rubriek": "Op deze dag",
+   "titel": "D66 opgericht, kabinet-Cals valt dezelfde dag",
+   "caption": "Precies zestig jaar geleden werd D66 opgericht 🗳️ Dezelfde dag viel het kabinet-Cals na de Nacht van Schmelzer. Welk politiek moment uit je jeugd is jou het meest bijgebleven?\n\n#nostalgie #vroeger #D66 #politiek #geschiedenis #jaren60 #nederland",
+   "afbeeldingen": [
+    "2026-10-14-o1-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Woensdag 14 oktober 1966",
+      "kop": "D66 opgericht, kabinet-Cals valt dezelfde dag",
+      "ondertitel": "Zestig jaar geleden begon D66, op de dag van de Nacht van Schmelzer.",
+      "jaren": 60,
+      "jaar": 1966,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1966): De Nederlandse politieke partij D66 wordt opgericht."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "U2 speelt in Hilversum voor het eerst op het vasteland",
+   "caption": "In 1980 speelde U2 in de KRO-studio in Hilversum 🎸 Het was hun eerste optreden op het Europese vasteland. Welk concert van vroeger zou jij zo opnieuw willen meemaken?\n\n#nostalgie #vroeger #U2 #Hilversum #KRO #jaren80 #muziek #nederland",
+   "afbeeldingen": [
+    "2026-10-14-o2-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Woensdag 14 oktober 1980",
+      "kop": "U2 speelt in Hilversum voor het eerst op het vasteland",
+      "ondertitel": "In 1980 stond de Ierse band U2 in de KRO-studio, hun eerste optreden op het Europese vasteland.",
+      "jaren": 46,
+      "jaar": 1980,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1980): In de KRO-studio in Hilversum geeft de Ierse band U2 zijn eerste optreden op het Europese vasteland."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Sparta Kasteel in Rotterdam geopend",
+   "caption": "Op 14 oktober 1916 ging het Sparta Kasteel in Rotterdam open ⚽ De eerste wedstrijd werd een dag later gespeeld. Heb jij zelf nog een wedstrijd in het Kasteel gezien, of vertelde iemand er over?\n\n#nostalgie #vroeger #Sparta #Rotterdam #voetbal #stadion #geschiedenis",
+   "afbeeldingen": [
+    "2026-10-14-o3-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Woensdag 14 oktober 1916",
+      "kop": "Sparta Kasteel in Rotterdam geopend",
+      "ondertitel": "Op 14 oktober 1916 werd het Sparta Kasteel geopend. De eerste wedstrijd volgde een dag later.",
+      "jaren": 110,
+      "jaar": 1916,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1916): Opening van het Sparta Kasteel Rotterdam. De eerste wedstrijd werd een dag later gespeeld op 15 oktober 1916."
+  }
+ ]
+}

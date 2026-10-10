@@ -1,0 +1,74 @@
+{
+ "datum": "2026-10-10",
+ "status": "kiezen",
+ "keuze": null,
+ "versie": 1,
+ "opties": [
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Nederland krijgt tien cijfers per telefoonnummer",
+   "caption": "Op 10 oktober 1995 werden alle Nederlandse telefoonnummers tiencijferig, onder de naam Operatie Decibel 📞 Daarna moest iedereen zijn eigen nummers opnieuw leren. Welk telefoonnummer uit je jeugd weet jij nog uit je hoofd?\n\n#nostalgie #vroeger #jarentachtig #jarennegentig #telefoon #operatiedecibel #nederland",
+   "afbeeldingen": [
+    "2026-10-10-o1-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Zaterdag 10 oktober 1995",
+      "kop": "Nederland krijgt tien cijfers per telefoonnummer",
+      "ondertitel": "Operatie Decibel: alle Nederlandse telefoonnummers werden in 1995 tiencijferig.",
+      "jaren": 31,
+      "jaar": 1995,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1995): Operatie Decibel: alle Nederlandse telefoonnummers worden tiencijferig."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Dreft is er: eerste synthetische wasmiddel",
+   "caption": "In 1933 kwam Dreft op de markt, het eerste synthetische wasmiddel 🧼 Daar begon een nieuw hoofdstuk in de geschiedenis van de was. Welk wasmiddel stond er bij jou thuis in de kast?\n\n#nostalgie #vroeger #dreft #wasmiddel #huishouden #geschiedenis #nederland",
+   "afbeeldingen": [
+    "2026-10-10-o2-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Zaterdag 10 oktober 1933",
+      "kop": "Dreft is er: eerste synthetische wasmiddel",
+      "ondertitel": "In 1933 kwam het eerste synthetische wasmiddel op de markt: Dreft.",
+      "jaren": 93,
+      "jaar": 1933,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1933): Het eerste synthetische wasmiddel (Dreft) komt op de markt."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Hulshoff scoort bij debuut voor Oranje",
+   "caption": "Verdediger Barry Hulshoff debuteerde in 1971 voor Oranje en scoorde meteen ⚽ Het werd 3-2 tegen de DDR in Rotterdam, in een EK-kwalificatiewedstrijd. Welk debuut in het Nederlands elftal is jou het meest bijgebleven?\n\n#nostalgie #vroeger #oranje #nederlandselftal #voetbal #barryhulshoff #jarenzeventig",
+   "afbeeldingen": [
+    "2026-10-10-o3-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Zaterdag 10 oktober 1971",
+      "kop": "Hulshoff scoort bij debuut voor Oranje",
+      "ondertitel": "Verdediger Barry Hulshoff maakte in 1971 een doelpunt bij zijn debuut tegen de DDR.",
+      "jaren": 55,
+      "jaar": 1971,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1971): Verdediger Barry Hulshoff luistert zijn debuut voor het Nederlands voetbalelftal op met een doelpunt in de EK-kwalificatiewedstrijd in Rotterdam tegen de DDR (3-2)."
+  }
+ ]
+}

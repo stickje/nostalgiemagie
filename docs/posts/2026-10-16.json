@@ -1,0 +1,82 @@
+{
+ "datum": "2026-10-16",
+ "status": "kiezen",
+ "keuze": null,
+ "versie": 1,
+ "opties": [
+  {
+   "rubriek": "Raad het jaar",
+   "titel": "Drie auto's vechten om plek vier, vijf en zes.",
+   "caption": "Halverwege de Grand Prix van Nederland strijden drie coureurs om plek vier, vijf en zes 🏎️. Eén van hen eindigt uiteindelijk als tweede. Welk jaar denk jij, zet je gok in de reacties en swipe voor het antwoord?\n\nFoto: Pereira, Fernando / Anefo / neg. stroken, 1945-1989, 2.24.01.05, item number 930-9906 / Nationaal Archief (CC BY-SA 3.0 nl)\n\n#nostalgie #vroeger #raadhetjaar #formule1 #grandprixvannederland #autosport #racen",
+   "afbeeldingen": [
+    "2026-10-16-o1-1.jpg",
+    "2026-10-16-o1-2.jpg"
+   ],
+   "slides": [
+    {
+     "template": "raad.html",
+     "waarden": {
+      "foto": "2026-10-16-o3-foto.jpg",
+      "hint": "Drie auto's vechten om plek vier, vijf en zes.",
+      "a": 1966,
+      "b": 1980,
+      "c": 1991
+     }
+    },
+    {
+     "template": "raad-antwoord.html",
+     "waarden": {
+      "jaar": 1980,
+      "letter": "B",
+      "uitleg": "Arnoux (Renault) leidt het gevecht om plek vier, vijf en zes in de Grand Prix van Nederland, voor Andretti (Lotus) en Reutemann (Williams)."
+     }
+    }
+   ],
+   "controle": "Juiste jaar volgens archief: 1980 (antwoord B). René Arnoux's Renault RE20 leads the battle for fourth, fifth and sixth positions at around half distance in the 1980 Dutch Grand Prix, ahead of the L"
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Mies Bouwman debuteert op de Nederlandse televisie",
+   "caption": "Precies 75 jaar geleden maakte Mies Bouwman haar debuut op de Nederlandse televisie, als omroepster bij de KRO. 📺 Welk programma van Mies denk jij als eerste aan?\n\n#nostalgie #vroeger #miesbouwman #televisie #kro #omroepster #nederlandsetelevisie #geschiedenis",
+   "afbeeldingen": [
+    "2026-10-16-o2-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Vrijdag 16 oktober 1951",
+      "kop": "Mies Bouwman debuteert op de Nederlandse televisie",
+      "ondertitel": "Op 16 oktober 1951 was ze voor het eerst te zien als omroepster bij de KRO.",
+      "jaren": 75,
+      "jaar": 1951,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1951): Mies Bouwman maakt haar debuut op de Nederlandse televisie als omroepster bij de KRO."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Rode kaart na vier minuten tegen België",
+   "caption": "In oktober 1985 kreeg Wim Kieft na vier minuten rood tegen België. Frank Vercauteren maakte de enige treffer in deze eerste play-offwedstrijd voor het WK 1986. ⚽ Wat is jouw Oranje-herinnering uit de jaren tachtig?\n\n#nostalgie #vroeger #oranje #voetbal #jarentachtig #wimkieft #nederlandselftal #wk1986",
+   "afbeeldingen": [
+    "2026-10-16-o3-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Vrijdag 16 oktober 1985",
+      "kop": "Rode kaart na vier minuten tegen België",
+      "ondertitel": "In 1985 speelde Oranje al snel met tien man in de play-offs voor het WK.",
+      "jaren": 41,
+      "jaar": 1985,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1985): Het Nederlands voetbalelftal verliest in de play-offs voor deelname aan het WK voetbal 1986 de eerste wedstrijd van België. Frank Vercauteren tekent voor de enige treffer, nadat Oranje al na vier minu"
+  }
+ ]
+}

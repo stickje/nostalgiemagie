@@ -1,0 +1,74 @@
+{
+ "datum": "2026-10-13",
+ "status": "kiezen",
+ "keuze": null,
+ "versie": 1,
+ "opties": [
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Oranje speelt gelijk in De Kuip",
+   "caption": "Precies 50 jaar geleden speelde Oranje in De Kuip met 2-2 gelijk tegen Noord-Ierland. Ruud Krol en Johan Cruijff scoorden na rust voor Nederland 🧡 Welke Oranjespeler uit die jaren zet jij als eerste in je elftal?\n\n#nostalgie #vroeger #oranje #nederlandselftal #johancruijff #dekuip #voetbal #jaren70",
+   "afbeeldingen": [
+    "2026-10-13-o1-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Dinsdag 13 oktober 1976",
+      "kop": "Oranje speelt gelijk in De Kuip",
+      "ondertitel": "Krol en Cruijff scoorden na rust tegen Noord-Ierland, precies 50 jaar geleden.",
+      "jaren": 50,
+      "jaar": 1976,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1976): Het Nederlands voetbalelftal speelt in De Kuip met 2-2 gelijk tegen Noord-Ierland in de kwalificatiereeks voor het WK voetbal 1978 in Argentinië. Ruud Krol en Johan Cruijff maken na rust de Nederlands"
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Beertje Paddington verschijnt voor het eerst in boek",
+   "caption": "In 1958 verscheen A Bear Called Paddington van Michael Bond, het boek waarin Beertje Paddington voor het eerst opduikt. 🐻 Had jij als kind een Paddington in huis, als boek of als knuffel?\n\n#nostalgie #vroeger #beertjepaddington #paddington #kinderboeken #jeugdherinneringen #jaren50",
+   "afbeeldingen": [
+    "2026-10-13-o2-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Dinsdag 13 oktober 1958",
+      "kop": "Beertje Paddington verschijnt voor het eerst in boek",
+      "ondertitel": "Michael Bond bracht in 1958 A Bear Called Paddington uit.",
+      "jaren": 68,
+      "jaar": 1958,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1958): Publicatie van het boek A Bear Called Paddington van de Britse schrijver Michael Bond waarin Beertje Paddington voor het eerst zijn opwachting maakt."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Eerste nine-darter op tv gegooid",
+   "caption": "In 1984 gooide John Lowe de allereerste nine-darter ooit op televisie. 🎯 Darts zat toen al in veel huiskamers en cafés. Kijk jij nog weleens naar darts, of is het niks voor jou?\n\n#nostalgie #vroeger #darts #johnlowe #jaren80 #sportgeschiedenis #televisie",
+   "afbeeldingen": [
+    "2026-10-13-o3-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Dinsdag 13 oktober 1984",
+      "kop": "Eerste nine-darter op tv gegooid",
+      "ondertitel": "John Lowe gooide in 1984 de allereerste nine-darter op televisie.",
+      "jaren": 42,
+      "jaar": 1984,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1984): John Lowe gooit de allereerste nine-darter ooit op televisie."
+  }
+ ]
+}

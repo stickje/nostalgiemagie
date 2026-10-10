@@ -1,0 +1,74 @@
+{
+ "datum": "2026-10-11",
+ "status": "kiezen",
+ "keuze": null,
+ "versie": 1,
+ "opties": [
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Hilversum III gaat voor het eerst de ether in",
+   "caption": "Op 11 oktober 1965 was de eerste uitzending van Hilversum III. Radio aan, en meer was er niet voor nodig 📻. Welk nummer of programma hoort voor jou bij die zender?\n\n#nostalgie #vroeger #radio #hilversum3 #jarenzestig #nederlandseradio #herinneringen",
+   "afbeeldingen": [
+    "2026-10-11-o1-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Zondag 11 oktober 1965",
+      "kop": "Hilversum III gaat voor het eerst de ether in",
+      "ondertitel": "Op 11 oktober 1965 was de eerste uitzending van Hilversum III.",
+      "jaren": 61,
+      "jaar": 1965,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1965): Eerste uitzending van Hilversum III."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Juliana opent vernieuwde Moerdijkbrug",
+   "caption": "Op 11 oktober 1978 opende koningin Juliana de vernieuwde Moerdijkbrug over het Hollands Diep. Een brug die je waarschijnlijk wel eens bent overgestoken 🌉. Welke reis over de Moerdijkbrug is jou het meest bijgebleven?\n\n#nostalgie #vroeger #moerdijkbrug #koninginjuliana #jarenzeventig #hollandsdiep #nederlandvroeger",
+   "afbeeldingen": [
+    "2026-10-11-o2-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Zondag 11 oktober 1978",
+      "kop": "Juliana opent vernieuwde Moerdijkbrug",
+      "ondertitel": "Op 11 oktober 1978 opende koningin Juliana de vernieuwde brug over het Hollands Diep.",
+      "jaren": 48,
+      "jaar": 1978,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1978): Koningin Juliana opent de vernieuwde Moerdijkbrug over het Hollands Diep."
+  },
+  {
+   "rubriek": "Op deze dag",
+   "titel": "Oranje wint met 4-0 van Malta",
+   "caption": "Op 11 oktober 1995 won Oranje met 4-0 van Malta in de EK-kwalificatie. Marc Overmars maakte daarbij een hattrick ⚽. Welke wedstrijd van Oranje uit die jaren is jou het best bijgebleven?\n\n#nostalgie #vroeger #oranje #nederlandselftal #marcovermars #jarennegentig #voetbal",
+   "afbeeldingen": [
+    "2026-10-11-o3-1.jpg"
+   ],
+   "slides": [
+    {
+     "template": "dag.html",
+     "waarden": {
+      "datum": "Zondag 11 oktober 1995",
+      "kop": "Oranje wint met 4-0 van Malta",
+      "ondertitel": "Op 11 oktober 1995 maakte Marc Overmars een hattrick in de EK-kwalificatie.",
+      "jaren": 31,
+      "jaar": 1995,
+      "foto": ""
+     }
+    }
+   ],
+   "controle": "Wikipedia (1995): Onder meer dankzij een hattrick van Marc Overmars wint het Nederlands voetbalelftal met 4-0 van Malta in de EK-kwalificatiereeks."
+  }
+ ]
+}
