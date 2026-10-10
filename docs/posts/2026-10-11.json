@@ -2,7 +2,7 @@
  "datum": "2026-10-11",
  "status": "klaar",
  "keuze": 1,
- "versie": 1,
+ "versie": 2,
  "opties": [
   {
    "rubriek": "Op deze dag",
@@ -31,7 +31,7 @@
    "titel": "Juliana opent vernieuwde Moerdijkbrug",
    "caption": "Op 11 oktober 1978 opende koningin Juliana de vernieuwde Moerdijkbrug over het Hollands Diep. Een brug die je waarschijnlijk wel eens bent overgestoken! 🌉\n\nWelk koningin Juliana-moment is jou het meest bijgebleven? \n\n#nostalgie #vroeger #moerdijkbrug #koninginjuliana #jarenzeventig",
    "afbeeldingen": [
-    "2026-10-11-o2-1.jpg"
+    "2026-10-11-o2-v2-1.jpg"
    ],
    "slides": [
     {
@@ -88,7 +88,7 @@
   }
  ],
  "afbeeldingen": [
-  "2026-10-11-o2-1.jpg"
+  "2026-10-11-o2-v2-1.jpg"
  ],
  "aangepast": "2026-10-10T10:56+02:00"
 }
