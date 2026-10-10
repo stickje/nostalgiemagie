@@ -179,7 +179,7 @@ def maak_opties(d, state):
         if len(posts) < AANTAL_OPTIES:
             print("Aanvullen met 'Op deze dag'")
             try:
-                posts += maak_dag(d, state, AANTAL_OPTIES - len(posts), start=len(posts) + 1)
+                posts += maak_dag(d, state, AANTAL_OPTIES - len(posts), start=AANTAL_OPTIES + 1)  # eigen fotonamen, geen botsing
             except Exception:
                 if not posts:
                     raise
