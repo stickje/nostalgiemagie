@@ -114,20 +114,27 @@ def maak_tv(d, state, n=1):
 
 
 def maak_raad(d, state, n=1):
+    """Eén Raad-het-jaar-post. Probeert tot 15 willekeurige jaren; per jaar ruimer zoeken dan voorheen,
+    zodat er op vrijdag drie Raad-het-jaar-opties uitkomen in plaats van één."""
     foto = None
-    for jaar in random.sample(range(1950, 1990), 6):
+    for jaar in random.sample(range(1950, 1990), 15):
         try:
-            fotos = sources.archieffotos(str(jaar), jaar=jaar, al_gebruikt=state["fotos"])
+            fotos = sources.archieffotos(str(jaar), jaar=jaar, limiet=50, al_gebruikt=state["fotos"])
         except Exception as ex:
             print(f"Zoeken mislukt voor {jaar}: {ex}")
+            time.sleep(1)
             continue
         if fotos:
-            foto = random.choice(fotos[:8])
+            foto = random.choice(fotos[:12])
             break
     if not foto:
         raise RuntimeError("Geen geschikte archieffoto gevonden")
     state["fotos"].append(foto["titel"])
-    uit = writer.schrijf_raad(foto)
+    try:
+        uit = writer.schrijf_raad(foto)
+    except Exception as ex:  # één keer opnieuw proberen (bv. onleesbaar antwoord)
+        print(f"Tekst schrijven mislukt, opnieuw: {ex}")
+        uit = writer.schrijf_raad(foto)
 
     juist = foto["jaar"]
     fout = random.sample([juist + x for x in range(-14, 15) if abs(x) >= 3 and juist + x < d.year], 2)
@@ -150,7 +157,7 @@ def caption_maken(post):
 
 def opruimen(d):
     grens = d - dt.timedelta(days=60)
-    for pad in glob.glob(os.path.join(config.POSTS_DIR, "*.jpg")):
+    for pad in [p for ext in ("jpg", "png", "mp4", "webm", "mov") for p in glob.glob(os.path.join(config.POSTS_DIR, f"*.{ext}"))]:
         try:
             if dt.date.fromisoformat(os.path.basename(pad)[:10]) < grens:
                 os.remove(pad)
@@ -171,7 +178,9 @@ def maak_opties(d, state):
         posts = maak_dag(d, state, AANTAL_OPTIES)
     else:
         maker = {"tv": maak_tv, "raad": maak_raad}[rubriek]
-        for n in range(1, AANTAL_OPTIES + 1):
+        for n in range(1, AANTAL_OPTIES + 3):  # twee extra pogingen, zodat alle opties van de rubriek zijn
+            if len(posts) >= AANTAL_OPTIES:
+                break
             try:
                 posts.append(maker(d, state, n))
             except Exception:
@@ -179,7 +188,7 @@ def maak_opties(d, state):
         if len(posts) < AANTAL_OPTIES:
             print("Aanvullen met 'Op deze dag'")
             try:
-                posts += maak_dag(d, state, AANTAL_OPTIES - len(posts), start=AANTAL_OPTIES + 1)  # eigen fotonamen, geen botsing
+                posts += maak_dag(d, state, AANTAL_OPTIES - len(posts), start=AANTAL_OPTIES + 3)  # eigen fotonamen, geen botsing
             except Exception:
                 if not posts:
                     raise

@@ -69,15 +69,18 @@ def opties_voorbeeld(datum: str, opties: list):
 
 
 def voorbeeld(afbeeldingen: list, caption: str, datum: str, rubriek: str, controle: str):
-    """Stuurt de afbeelding(en), de caption en de controle-info met de knop."""
+    """Stuurt de afbeelding(en) en video's, de caption en de controle-info met de knop."""
+    def soort(pad):
+        return "video" if pad.lower().endswith((".mp4", ".mov", ".webm")) else "photo"
     if len(afbeeldingen) == 1:
+        s = soort(afbeeldingen[0])
         with open(afbeeldingen[0], "rb") as f:
-            _post("sendPhoto", data={"chat_id": TELEGRAM_CHAT_ID}, files={"photo": f})
+            _post("sendVideo" if s == "video" else "sendPhoto", data={"chat_id": TELEGRAM_CHAT_ID}, files={s: f})
     else:
         media, files = [], {}
-        for i, pad in enumerate(afbeeldingen):
+        for i, pad in enumerate(afbeeldingen[:10]):
             files[f"f{i}"] = open(pad, "rb")
-            media.append({"type": "photo", "media": f"attach://f{i}"})
+            media.append({"type": soort(pad), "media": f"attach://f{i}"})
         _post("sendMediaGroup", data={"chat_id": TELEGRAM_CHAT_ID, "media": json.dumps(media)}, files=files)
         for f in files.values():
             f.close()

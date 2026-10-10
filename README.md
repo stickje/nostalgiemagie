@@ -56,9 +56,21 @@ Overslaan kan op drie manieren:
 
 Let op: Telegram bewaart berichten aan de bot maar 24 uur. Zolang de ochtend- en avondjobs dagelijks draaien is dat geen probleem.
 
+## Redactie (editor)
+
+In de Nostalgiemagie Redactie kies je per dag een optie en pas je tekst en foto aan:
+
+- **Foto passend maken**: sleep in het voorbeeld om te verplaatsen, scrol of knijp om te zoomen, of gebruik de schuifjes
+  (grootte, draaien, links/rechts, omhoog/omlaag) en de knoppen 90° draaien, spiegelen en passend maken.
+- **Swipes**: met *Swipe toevoegen* zet je foto's (JPG/PNG) of video's (MP4/WebM, max. 20 MB) achter het voorblad.
+  Ze worden vullend 1080 x 1350, met het logo klein in de hoek. Video's worden een MP4 van max. 60 seconden.
+  Een post heeft maximaal 10 slides.
+- Op vrijdag (Raad het jaar) zijn alle drie de opties Raad het jaar; alleen als er echt geen archieffoto's te vinden
+  zijn, vult "Op deze dag" aan.
+
 ## Aanpassen
 
 - Toon en regels voor Claude: `writer.py`
-- Vormgeving: `dag.html`, `raad.html`, `raad-antwoord.html`
+- Vormgeving: `dag.html`, `raad.html`, `raad-antwoord.html`, `swipe.html` (swipes met logo)
 - Rubriek per weekdag: `config.py`
 - Welke TV-categorieën: `sources.py` (rubriek staat nu uit; `tv.html` ontbreekt)
