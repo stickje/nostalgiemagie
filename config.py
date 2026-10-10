@@ -25,8 +25,8 @@ EDITOR_URL = (os.environ.get("EDITOR_URL") or "https://claude.ai/artifact/4JHiFw
 # Proefmodus: alles draait, maar er wordt niets op Instagram geplaatst.
 DRY_RUN = (os.environ.get("DRY_RUN") or "true").lower() in ("1", "true", "ja", "yes")
 
-# Regel onder elke caption.
-AI_REGEL = os.environ.get("AI_REGEL", "Samengesteld met hulp van AI, gecontroleerd door de redactie.")
+# Optionele regel onder elke caption, bv. "Samengesteld met hulp van AI." Leeg = geen regel.
+AI_REGEL = os.environ.get("AI_REGEL", "")
 
 MAANDEN = ["januari", "februari", "maart", "april", "mei", "juni", "juli",
            "augustus", "september", "oktober", "november", "december"]

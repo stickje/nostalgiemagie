@@ -29,12 +29,16 @@ def bewaar_state(state):
 
 
 def foto_credit(foto):
+    """Naamsvermelding, alleen als de licentie die eist (CC BY / CC BY-SA). CC0 en publiek domein: niets."""
+    lic = (foto.get("licentie") or "").lower()
+    if "cc0" in lic or "public domain" in lic or "publiek domein" in lic:
+        return ""
     return f"Foto: {foto['maker']} / Nationaal Archief ({foto['licentie']})"
 
 
-def bewaar_foto(foto, d):
+def bewaar_foto(foto, d, optie=1):
     """Downloadt de archieffoto naast de post, zodat hij later opnieuw te gebruiken en aan te passen is."""
-    naam = f"{d.isoformat()}-foto.jpg"
+    naam = f"{d.isoformat()}-o{optie}-foto.jpg"
     r = requests.get(foto["url"], headers=sources.UA, timeout=60)
     r.raise_for_status()
     with open(os.path.join(config.POSTS_DIR, naam), "wb") as f:
@@ -42,7 +46,8 @@ def bewaar_foto(foto, d):
     return naam
 
 
-def maak_dag(d, state):
+def maak_dag(d, state, aantal=3, start=1):
+    """Geeft een lijst van maximaal `aantal` posts voor 'Op deze dag', elk over een ander onderwerp."""
     events, bron = sources.gebeurtenissen(d, max_jaar=d.year - 15)
     events = [e for e in events if f"{e['jaar']}:{e['tekst'][:40]}" not in state["events"]]
     if not events:
@@ -52,39 +57,39 @@ def maak_dag(d, state):
     random.shuffle(rest)
     kandidaten = (jubilea + rest)[:40]
 
-    uit = writer.schrijf_dag(config.datum_lang(d), d.year, kandidaten)
-    e = kandidaten[int(uit["index"])]
-
-    foto = None
-    try:
-        fotos = sources.archieffotos(uit.get("zoekterm", ""), jaar=e["jaar"], al_gebruikt=state["fotos"])
-        foto = fotos[0] if fotos else None
-    except Exception as ex:
-        print(f"Geen foto gevonden: {ex}")
-
-    fotobestand = ""
-    if foto:
+    posts = []
+    for n, uit in enumerate(writer.schrijf_dag(config.datum_lang(d), d.year, kandidaten, aantal), start=start):
+        e = kandidaten[int(uit["index"])]
+        foto = None
         try:
-            fotobestand = bewaar_foto(foto, d)
+            fotos = sources.archieffotos(uit.get("zoekterm", ""), jaar=e["jaar"], al_gebruikt=state["fotos"])
+            foto = fotos[0] if fotos else None
         except Exception as ex:
-            print(f"Foto downloaden mislukt: {ex}")
-            foto = None
-    waarden = {
-        "datum": f"{config.DAGEN[d.weekday()].capitalize()} {config.datum_lang(d)} {e['jaar']}",
-        "kop": uit["kop"], "ondertitel": uit["ondertitel"], "jaren": d.year - e["jaar"], "jaar": e["jaar"],
-        "foto": fotobestand,
-    }
-    controle = f"Wikipedia ({e['jaar']}): {e['tekst']}\n{bron}"
-    if foto:
-        controle += f"\n\nFoto ({foto['jaar']}): {foto['beschrijving'] or 'geen beschrijving'}\n{foto['pagina']}"
-        state["fotos"].append(foto["titel"])
-    state["events"].append(f"{e['jaar']}:{e['tekst'][:40]}")
-    bronregels = [f"Bron: Wikipedia, {config.datum_lang(d)}"] + ([foto_credit(foto)] if foto else [])
-    return {"rubriek": "Op deze dag", "slides": [("dag.html", waarden)], "uit": uit,
-            "bronregels": bronregels, "controle": controle}
+            print(f"Geen foto gevonden: {ex}")
+        fotobestand = ""
+        if foto:
+            try:
+                fotobestand = bewaar_foto(foto, d, n)
+            except Exception as ex:
+                print(f"Foto downloaden mislukt: {ex}")
+                foto = None
+        waarden = {
+            "datum": f"{config.DAGEN[d.weekday()].capitalize()} {config.datum_lang(d)} {e['jaar']}",
+            "kop": uit["kop"], "ondertitel": uit["ondertitel"], "jaren": d.year - e["jaar"], "jaar": e["jaar"],
+            "foto": fotobestand,
+        }
+        controle = f"Wikipedia ({e['jaar']}): {e['tekst'][:200]}"
+        if foto:
+            controle += f"\nFoto ({foto['jaar']}): {(foto['beschrijving'] or 'geen beschrijving')[:150]}"
+            state["fotos"].append(foto["titel"])
+        state["events"].append(f"{e['jaar']}:{e['tekst'][:40]}")
+        posts.append({"rubriek": "Op deze dag", "slides": [("dag.html", waarden)], "uit": uit,
+                      "bronregels": [foto_credit(foto)] if foto and foto_credit(foto) else [], "controle": controle,
+                      "bron": bron})
+    return posts
 
 
-def maak_tv(d, state):
+def maak_tv(d, state, n=1):
     kandidaten = sources.tv_kandidaten(5, state["tv"])
     if not kandidaten:
         raise RuntimeError("Geen TV-programma's gevonden")
@@ -100,10 +105,10 @@ def maak_tv(d, state):
     }
     controle = f"{k['titel']}:\n{k['intro'][:700]}\n{k['bron']}"
     return {"rubriek": "Vergeten TV", "slides": [("tv.html", waarden)], "uit": uit,
-            "bronregels": [f"Bron: Wikipedia, {k['titel']}"], "controle": controle}
+            "bronregels": [], "controle": controle}
 
 
-def maak_raad(d, state):
+def maak_raad(d, state, n=1):
     foto = None
     for jaar in random.sample(range(1950, 1990), 6):
         try:
@@ -124,11 +129,11 @@ def maak_raad(d, state):
     opties = [juist] + fout
     random.shuffle(opties)
     letter = "ABC"[opties.index(juist)]
-    vraag = {"foto": bewaar_foto(foto, d), "hint": uit["hint"], "a": opties[0], "b": opties[1], "c": opties[2]}
+    vraag = {"foto": bewaar_foto(foto, d, n), "hint": uit["hint"], "a": opties[0], "b": opties[1], "c": opties[2]}
     antwoord = {"jaar": juist, "letter": letter, "uitleg": uit.get("uitleg", "")}
-    controle = f"Juiste jaar volgens archief: {juist} (antwoord {letter})\n{foto['beschrijving'] or 'geen beschrijving'}\n{foto['pagina']}"
+    controle = f"Juiste jaar volgens archief: {juist} (antwoord {letter}). {(foto['beschrijving'] or '')[:150]}"
     return {"rubriek": "Raad het jaar", "slides": [("raad.html", vraag), ("raad-antwoord.html", antwoord)],
-            "uit": uit, "bronregels": [foto_credit(foto)], "controle": controle}
+            "uit": uit, "bronregels": [foto_credit(foto)] if foto_credit(foto) else [], "controle": controle}
 
 
 def caption_maken(post):
@@ -148,38 +153,71 @@ def opruimen(d):
             pass
 
 
-MAKERS = {"dag": maak_dag, "tv": maak_tv, "raad": maak_raad}
-AFGEHANDELD = ("klaar", "geplaatst", "overgeslagen", "proef")
+AANTAL_OPTIES = 3
+AFGEHANDELD = ("kiezen", "klaar", "geplaatst", "overgeslagen", "proef", "geen keuze")
 
 
-def maak_post(d, state):
-    """Maakt de post voor datum d, bewaart hem en stuurt het voorbeeld. Geeft de JSON terug."""
+def maak_opties(d, state):
+    """Maakt AANTAL_OPTIES posts voor datum d. Lukt de rubriek van die dag niet, dan vult
+    'Op deze dag' aan."""
     rubriek = config.RUBRIEKEN[d.weekday()]
-    try:
-        post = MAKERS[rubriek](d, state)
-    except Exception:
-        if rubriek == "dag":
-            raise
-        traceback.print_exc()
-        print("Terugvallen op 'Op deze dag'")
-        post = maak_dag(d, state)
+    posts = []
+    if rubriek == "dag":
+        posts = maak_dag(d, state, AANTAL_OPTIES)
+    else:
+        maker = {"tv": maak_tv, "raad": maak_raad}[rubriek]
+        for n in range(1, AANTAL_OPTIES + 1):
+            try:
+                posts.append(maker(d, state, n))
+            except Exception:
+                traceback.print_exc()
+        if len(posts) < AANTAL_OPTIES:
+            print("Aanvullen met 'Op deze dag'")
+            try:
+                posts += maak_dag(d, state, AANTAL_OPTIES - len(posts), start=len(posts) + 1)
+            except Exception:
+                if not posts:
+                    raise
+                traceback.print_exc()
+    if not posts:
+        raise RuntimeError("Geen enkele optie gelukt")
 
-    paden = render.render(post["slides"], os.path.join(config.POSTS_DIR, d.isoformat()))
-    caption = caption_maken(post)
-    uit = post["uit"]
-    data = {"datum": d.isoformat(), "rubriek": post["rubriek"],
+    opties = []
+    for n, post in enumerate(posts, start=1):
+        paden = render.render(post["slides"], os.path.join(config.POSTS_DIR, f"{d.isoformat()}-o{n}"))
+        uit = post["uit"]
+        opties.append({
+            "rubriek": post["rubriek"],
             "titel": uit.get("kop") or uit.get("naam") or uit.get("hint") or "",
-            "caption": caption, "afbeeldingen": [os.path.basename(p) for p in paden], "status": "klaar",
-            "slides": [{"template": t, "waarden": w} for t, w in post["slides"]]}
+            "caption": caption_maken(post),
+            "afbeeldingen": [os.path.basename(p) for p in paden],
+            "slides": [{"template": t, "waarden": w} for t, w in post["slides"]],
+            "controle": post["controle"],
+            "paden": paden,
+        })
+    return opties
+
+
+def maak_dag_bestand(d, state):
+    """Maakt de opties voor datum d, bewaart ze en stuurt ze naar Telegram. Geeft de JSON terug."""
+    opties = maak_opties(d, state)
+    data = {"datum": d.isoformat(), "status": "kiezen", "keuze": None, "versie": 1,
+            "opties": [{k: v for k, v in o.items() if k != "paden"} for o in opties]}
     noodrem.bewaar(d.isoformat(), data)
     bewaar_state(state)
     try:
-        telegram.voorbeeld(paden, caption, d.isoformat(), post["rubriek"], post["controle"])
-    except Exception as ex:  # post staat klaar, alleen het voorbeeld kwam niet aan
+        telegram.opties_voorbeeld(d.isoformat(), opties)
+    except Exception as ex:  # opties staan klaar, alleen het voorbeeld kwam niet aan
         traceback.print_exc()
-        telegram.bericht(f"Post voor {config.dag_label(d)} staat klaar, maar het voorbeeld kon niet "
-                         f"verstuurd worden ({ex}).\n\n{caption[:1500]}", knop_datum=d.isoformat())
+        telegram.bericht(f"De opties voor {config.dag_label(d)} staan klaar, maar het voorbeeld kon niet "
+                         f"verstuurd worden ({ex}). Kies in de editor.", knop_datum=d.isoformat(), opties=len(opties))
     return data
+
+
+def omschrijf(post):
+    if post.get("status") == "kiezen":
+        return f"{len(post.get('opties') or [])} opties, nog kiezen"
+    return f"{post.get('titel', '')} [{post.get('status')}]"
 
 
 def main():
@@ -195,15 +233,21 @@ def main():
         label = config.dag_label(d)
         bestaand = noodrem.lees(d.isoformat())
         if bestaand and bestaand.get("status") in AFGEHANDELD:
-            regels.append(f"{label}: {bestaand.get('rubriek', '')}, {bestaand.get('titel', '')} [{bestaand['status']}]")
+            regels.append(f"{label}: {omschrijf(bestaand)}")
             if dagen == 1 and bestaand["status"] == "klaar":
-                telegram.bericht(f"Vanavond om 18.00 uur gaat online: {bestaand.get('titel') or bestaand['rubriek']} "
-                                 f"({bestaand['rubriek']}). Niet goed? Tik op Overslaan.", knop_datum=d.isoformat())
+                telegram.bericht(f"Vanavond om 18.00 uur gaat online: {bestaand.get('titel') or bestaand.get('rubriek')}. "
+                                 "Niet goed? Kies een andere optie, pas hem aan of sla over.",
+                                 knop_datum=d.isoformat(), opties=len(bestaand.get("opties") or []))
+            elif dagen == 1 and bestaand["status"] == "kiezen":
+                keuzes = "\n".join(f"{n}. {o.get('titel', '')}" for n, o in enumerate(bestaand.get("opties") or [], start=1))
+                telegram.bericht(f"Je hebt nog geen optie gekozen voor vandaag. Zonder keuze wordt er om 18.00 uur "
+                                 f"niets geplaatst.\n\n{keuzes}", knop_datum=d.isoformat(),
+                                 opties=len(bestaand.get("opties") or []))
             continue
         try:
-            data = maak_post(d, state)
-            regels.append(f"{label}: {data['rubriek']}, {data['titel']}")
-            print(f"Klaar: {data['rubriek']} voor {d}")
+            data = maak_dag_bestand(d, state)
+            regels.append(f"{label}: {omschrijf(data)}")
+            print(f"Klaar: {len(data['opties'])} opties voor {d}")
         except Exception as ex:
             traceback.print_exc()
             mislukt += 1
@@ -215,8 +259,8 @@ def main():
     opruimen(start)
     if dagen > 1:
         telegram.bericht("Planning:\n\n" + "\n".join(regels) +
-                         "\n\nElke dag om 18.00 uur gaat de post van die dag online. "
-                         "Overslaan kan met de knop onder het voorbeeld, of stuur 'overslaan 14-10'.")
+                         "\n\nKies per dag een optie met de knoppen onder de opties. Elke dag om 18.00 uur gaat "
+                         "de gekozen optie online; zonder keuze wordt er die dag niets geplaatst.")
     if mislukt == dagen:
         sys.exit(1)
 

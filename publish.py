@@ -22,8 +22,13 @@ def plaatsen():
     if not post:
         telegram.bericht(f"Er staat geen post klaar voor {d}. Is de ochtendrun gelukt?")
         return 1
-    if post.get("status") in ("geplaatst", "overgeslagen"):
+    if post.get("status") in ("geplaatst", "overgeslagen", "geen keuze"):
         print(f"Al afgehandeld: {post['status']}")
+        return 0
+    if post.get("status") == "kiezen" or not post.get("afbeeldingen"):
+        post["status"] = "geen keuze"
+        noodrem.bewaar(d, post)
+        telegram.bericht(f"Je hebt voor vandaag ({d}) geen optie gekozen, dus er is niets geplaatst.")
         return 0
 
     urls = [f"{config.PAGES_URL}/posts/{naam}" for naam in post["afbeeldingen"]]

@@ -18,11 +18,12 @@ def main():
         telegram.bericht(f"De post van {datum} staat al online, dus die is niet opnieuw gemaakt.")
         return 1
     if not post.get("slides"):
-        telegram.bericht(f"De post van {datum} is gemaakt met een oude versie en kan niet aangepast worden.")
+        telegram.bericht(f"Voor {datum} is nog geen optie gekozen, dus er valt niets opnieuw te maken.")
         return 1
 
     versie = int(post.get("versie", 1)) + 1
-    basis = os.path.join(config.POSTS_DIR, f"{datum}-v{versie}")
+    optie = (post.get("keuze") or 0) + 1
+    basis = os.path.join(config.POSTS_DIR, f"{datum}-o{optie}-v{versie}")
     oud = [os.path.join(config.POSTS_DIR, n) for n in post.get("afbeeldingen", [])]
     paden = render.render(post["slides"], basis)
     for pad in oud:  # vorige versie opruimen (de foto's zelf blijven staan)
@@ -32,8 +33,10 @@ def main():
     post.update(afbeeldingen=[os.path.basename(p) for p in paden], versie=versie)
     if post.get("status") != "overgeslagen":
         post["status"] = "klaar"
+    noodrem.bewaar_gekozen(post)
     noodrem.bewaar(datum, post)
-    telegram.voorbeeld(paden, post["caption"], datum, post["rubriek"], "Dit is de aangepaste versie.")
+    telegram.voorbeeld(paden, post["caption"], datum, post["rubriek"],
+                       f"Dit is de aangepaste versie van optie {optie}, en die is nu gekozen.")
     print(f"Opnieuw gemaakt: {datum} (versie {versie})")
     return 0
 
