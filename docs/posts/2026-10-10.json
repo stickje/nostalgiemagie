@@ -1,13 +1,13 @@
 {
  "datum": "2026-10-10",
- "status": "kiezen",
- "keuze": null,
+ "status": "klaar",
+ "keuze": 0,
  "versie": 1,
  "opties": [
   {
    "rubriek": "Op deze dag",
    "titel": "Nederland krijgt tien cijfers per telefoonnummer",
-   "caption": "Op 10 oktober 1995 werden alle Nederlandse telefoonnummers tiencijferig, onder de naam Operatie Decibel 📞 Daarna moest iedereen zijn eigen nummers opnieuw leren. Welk telefoonnummer uit je jeugd weet jij nog uit je hoofd?\n\n#nostalgie #vroeger #jarentachtig #jarennegentig #telefoon #operatiedecibel #nederland",
+   "caption": "Op 10 oktober 1995 werden alle Nederlandse telefoonnummers tiencijferig, onder de naam Operatie Decibel 📞 Alle huishoudens ontvingen een omnummergids. Ook was een omnummerapparaat te koop, genaamd de 'numculator'. \n\nMoest jij je eigen nummer opnieuw leren? 😮\n\nnostalgie #vroeger #jarennegentig #telefoon",
    "afbeeldingen": [
     "2026-10-10-o1-1.jpg"
    ],
@@ -20,7 +20,7 @@
       "ondertitel": "Operatie Decibel: alle Nederlandse telefoonnummers werden in 1995 tiencijferig.",
       "jaren": 31,
       "jaar": 1995,
-      "foto": ""
+      "foto": "2026-10-10-eigen-1.jpg"
      }
     }
    ],
@@ -70,5 +70,25 @@
    ],
    "controle": "Wikipedia (1971): Verdediger Barry Hulshoff luistert zijn debuut voor het Nederlands voetbalelftal op met een doelpunt in de EK-kwalificatiewedstrijd in Rotterdam tegen de DDR (3-2)."
   }
- ]
+ ],
+ "rubriek": "Op deze dag",
+ "titel": "Nederland krijgt tien cijfers per telefoonnummer",
+ "caption": "Op 10 oktober 1995 werden alle Nederlandse telefoonnummers tiencijferig, onder de naam Operatie Decibel 📞 Alle huishoudens ontvingen een omnummergids. Ook was een omnummerapparaat te koop, genaamd de 'numculator'. \n\nMoest jij je eigen nummer opnieuw leren? 😮\n\nnostalgie #vroeger #jarennegentig #telefoon",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Zaterdag 10 oktober 1995",
+    "kop": "Nederland krijgt tien cijfers per telefoonnummer",
+    "ondertitel": "Operatie Decibel: alle Nederlandse telefoonnummers werden in 1995 tiencijferig.",
+    "jaren": 31,
+    "jaar": 1995,
+    "foto": "2026-10-10-eigen-1.jpg"
+   }
+  }
+ ],
+ "afbeeldingen": [
+  "2026-10-10-o1-1.jpg"
+ ],
+ "aangepast": "2026-10-10T10:18+02:00"
 }
