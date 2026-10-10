@@ -1,0 +1,23 @@
+{
+ "datum": "2026-10-12",
+ "rubriek": "Op deze dag",
+ "titel": "Curry en Van Inkel gaan voor het eerst de ether in",
+ "caption": "Op 12 oktober 1984 klonk op Hilversum 3 voor het eerst Curry en Van Inkel.\n\nAdam Curry en Jeroen van Inkel. Twee namen, één radioprogramma. Nu 42 jaar geleden.\n\nDe radio stond vroeger gewoon aan. Niemand koos een algoritme. Je draaide aan een knop en hoopte dat het goed zat.\n\nWie zat er destijds met een cassettebandje klaar om iets op te nemen? Eerlijk zijn. Wij doen niet moeilijk.\n\nWeet jij dit nog? Of luisterde jij liever stiekem onder de dekens?\n\nBron: Wikipedia, 12 oktober\n\nSamengesteld met hulp van AI, gecontroleerd door de redactie.\n\n#nostalgie #vroeger #radio #hilversum3 #adamcurry #jeroenvaninkel #jarentachtig #weetjenogwel",
+ "afbeeldingen": [
+  "2026-10-12-1.jpg"
+ ],
+ "status": "klaar",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Maandag 12 oktober 1984",
+    "kop": "Curry en Van Inkel gaan voor het eerst de ether in",
+    "ondertitel": "12 oktober 1984: de eerste aflevering van Curry en Van Inkel klinkt op Hilversum 3. Adam en Jeroen achter de microfoon.",
+    "jaren": 42,
+    "jaar": 1984,
+    "foto": ""
+   }
+  }
+ ]
+}

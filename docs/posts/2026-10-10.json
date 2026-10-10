@@ -1,0 +1,23 @@
+{
+ "datum": "2026-10-10",
+ "rubriek": "Op deze dag",
+ "titel": "Heel Nederland krijgt tiencijferige telefoonnummers",
+ "caption": "Operatie Decibel. Het klinkt als een geheime missie, maar het ging gewoon om je telefoonnummer.\n\nOp 10 oktober 1995 werden alle Nederlandse telefoonnummers tiencijferig. Het hele land tegelijk. Geen uitzonderingen.\n\nHet is nu 31 jaar geleden. Toch voelt het alsof iemand het gisteren nog even snel regelde.\n\nTegenwoordig zit alles in je telefoon opgeslagen. Maar vroeger moest je nummers gewoon onthouden. Of ergens opschrijven. Of bellen en hopen dat de ander het zelf nog wist.\n\nWeet jij dit nog? En ken je nog een telefoonnummer uit je jeugd uit je hoofd?\n\nBron: Wikipedia, 10 oktober\n\nSamengesteld met hulp van AI, gecontroleerd door de redactie.\n\n#nostalgie #vroeger #jarennegentig #telefoonnummer #OperatieDecibel #weetjenogwel #nederlandvanvroeger #jeugdherinneringen",
+ "afbeeldingen": [
+  "2026-10-10-1.jpg"
+ ],
+ "status": "klaar",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Zaterdag 10 oktober 1995",
+    "kop": "Heel Nederland krijgt tiencijferige telefoonnummers",
+    "ondertitel": "Op 10 oktober 1995 gingen alle Nederlandse telefoonnummers over op tien cijfers. De actie heette Operatie Decibel.",
+    "jaren": 31,
+    "jaar": 1995,
+    "foto": ""
+   }
+  }
+ ]
+}

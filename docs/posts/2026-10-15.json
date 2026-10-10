@@ -1,0 +1,23 @@
+{
+ "datum": "2026-10-15",
+ "rubriek": "Op deze dag",
+ "titel": "Top 5 spreekt voor het eerst geen Engels",
+ "caption": "15 oktober 1994. De Nederlandse top 40 schrijft geschiedenis.\n\nVoor het eerst ooit staat er geen enkel Engelstalig nummer in de top 5. Niet één. Even geen Engels, dank u wel.\n\nDe lijst op een rij: 1. Marco Borsato met Dromen zijn bedrog. 2. Paul de Leeuw met Voorbij / Ik ben zo blij dat ik een vrouw ben. 3. Mo-Do met Eins, Zwei, Polizei. 4. De Dikke Lul Band met, ja hoor, Dikke lul. 5. André Rieu met The second waltz.\n\nEen romantische ballade, een feestnummer, een walsje en een titel die je op de radio niet zomaar voorlas aan oma. Dat was de top 5 van Nederland. Heerlijk gek.\n\nWeet jij dit nog? En welk van die vijf zong jij het hardst mee?\n\nBron: Wikipedia, 15 oktober\n\nSamengesteld met hulp van AI, gecontroleerd door de redactie.\n\n#nostalgie #vroeger #top40 #jaren90 #marcoborsato #pauldeleeuw #andrerieu #nederlandsemuziek",
+ "afbeeldingen": [
+  "2026-10-15-1.jpg"
+ ],
+ "status": "klaar",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Donderdag 15 oktober 1994",
+    "kop": "Top 5 spreekt voor het eerst geen Engels",
+    "ondertitel": "15 oktober 1994: voor het eerst staat er geen Engelstalig nummer in de top 5 van de Nederlandse top 40. Borsato, Paul de Leeuw en een flinke dosis ondeugd.",
+    "jaren": 32,
+    "jaar": 1994,
+    "foto": ""
+   }
+  }
+ ]
+}

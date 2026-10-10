@@ -1,0 +1,23 @@
+{
+ "datum": "2026-10-13",
+ "rubriek": "Op deze dag",
+ "titel": "Twee keer raak in De Kuip: 2-2 tegen Noord-Ierland",
+ "caption": "13 oktober 1976. Precies vijftig jaar geleden speelde het Nederlands elftal in De Kuip tegen Noord-Ierland.\n\nHet ging om de kwalificatiereeks voor het WK voetbal van 1978 in Argentinië. Dus het was geen vriendschappelijk potje voor de gezelligheid.\n\nNa rust stonden er twee namen op het scorebord die je graag op je Oranje-bingokaart hebt: Ruud Krol en Johan Cruijff. Beiden maakten een doelpunt.\n\nEindstand: 2-2. Een gelijkspel, dus. Een beetje als een verjaardagstaart waar nét een stuk te weinig van over is.\n\nWie van jullie had Cruijff en Krol nog live aan het werk gezien? Of kennen jullie het verhaal alleen van vader, opa of die ene oom die het elke keer weer vertelt? Weet jij dit nog?\n\nBron: Wikipedia, 13 oktober\n\nSamengesteld met hulp van AI, gecontroleerd door de redactie.\n\n#nostalgie #vroeger #oranje #nederlandselftal #voetbalgeschiedenis #johancruijff #dekuip #jaren70",
+ "afbeeldingen": [
+  "2026-10-13-1.jpg"
+ ],
+ "status": "klaar",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Dinsdag 13 oktober 1976",
+    "kop": "Twee keer raak in De Kuip: 2-2 tegen Noord-Ierland",
+    "ondertitel": "Vijftig jaar geleden speelt Oranje in De Kuip 2-2 tegen Noord-Ierland. Na rust scoren Ruud Krol en Johan Cruijff.",
+    "jaren": 50,
+    "jaar": 1976,
+    "foto": ""
+   }
+  }
+ ]
+}

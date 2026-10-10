@@ -1,0 +1,31 @@
+{
+ "datum": "2026-10-16",
+ "rubriek": "Raad het jaar",
+ "titel": "Een prins, een paleis en een fotograaf die op tijd was.",
+ "caption": "Een fotouurtje op Huis ten Bosch. Iedereen netjes in de houding, de fotograaf in zijn element.\n\nIn het midden: Prins Johan Friso. Kijk goed naar de kleding, de kapsels en de sfeer. Dan komt het jaar vanzelf.\n\nZet eerst je gok in de reacties. Swipe daarna naar de volgende slide voor het antwoord.\n\nWeet jij nog wanneer dit was?\n\nFoto: Croes, Rob C. for Anefo / Nationaal Archief (CC0)\n\nSamengesteld met hulp van AI, gecontroleerd door de redactie.\n\n#nostalgie #vroeger #raadhetjaar #koninklijkhuis #huistenbosch #johanfriso #oudnederland #archieffoto",
+ "afbeeldingen": [
+  "2026-10-16-1.jpg",
+  "2026-10-16-2.jpg"
+ ],
+ "status": "klaar",
+ "slides": [
+  {
+   "template": "raad.html",
+   "waarden": {
+    "foto": "2026-10-16-foto.jpg",
+    "hint": "Een prins, een paleis en een fotograaf die op tijd was.",
+    "a": 1986,
+    "b": 1981,
+    "c": 1974
+   }
+  },
+  {
+   "template": "raad-antwoord.html",
+   "waarden": {
+    "jaar": 1986,
+    "letter": "A",
+    "uitleg": "Een fotouurtje van de Koninklijke Familie op Huis ten Bosch, met Prins Johan Friso."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "datum": "2026-10-11",
+ "rubriek": "Op deze dag",
+ "titel": "Countdown gaat van start op Nederland 2",
+ "caption": "Op 11 oktober 1978 zendt Veronica op Nederland 2 de eerste aflevering van Countdown uit.\n\nDat is vandaag 48 jaar geleden. Even rekenen, en ja, dat voelt een stuk korter dan het is.\n\nDe naam zegt het al: aftellen. Wij tellen vandaag mee, terug naar 1978.\n\nEn nee, we vertellen u niet wie er allemaal voorbijkwam. Dat weet u zelf vast beter dan wij.\n\nWeet jij dit nog? Of kijk je nog steeds liever naar de herinnering dan naar de tijd die verstreken is?\n\nBron: Wikipedia, 11 oktober\n\nSamengesteld met hulp van AI, gecontroleerd door de redactie.\n\n#nostalgie #vroeger #countdown #veronica #jaren70 #oudetelevisie #nederlandsetelevisie #weetjijhetnog",
+ "afbeeldingen": [
+  "2026-10-11-1.jpg"
+ ],
+ "status": "klaar",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Zondag 11 oktober 1978",
+    "kop": "Countdown gaat van start op Nederland 2",
+    "ondertitel": "11 oktober 1978: Veronica zendt de eerste aflevering van Countdown uit. Dat is vandaag precies 48 jaar geleden.",
+    "jaren": 48,
+    "jaar": 1978,
+    "foto": ""
+   }
+  }
+ ]
+}
