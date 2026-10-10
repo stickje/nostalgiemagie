@@ -5,6 +5,7 @@ import html
 import json
 import os
 import random
+import re
 import sys
 import time
 import traceback
@@ -33,7 +34,11 @@ def foto_credit(foto):
     lic = (foto.get("licentie") or "").lower()
     if "cc0" in lic or "public domain" in lic or "publiek domein" in lic:
         return ""
-    return f"Foto: {foto['maker']} / Nationaal Archief ({foto['licentie']})"
+    delen = [d.strip() for d in (foto.get("maker") or "").split("/")
+             if d.strip() and not re.search(r"\d|neg\.|item|stroken", d, re.I)]
+    maker = " / ".join(delen[:2]) or "Nationaal Archief"
+    lic = re.sub(r"\s+nl$", "", foto.get("licentie") or "").strip()
+    return f"Foto: {maker} / Nationaal Archief ({lic})"
 
 
 def bewaar_foto(foto, d, optie=1):
