@@ -2,14 +2,14 @@
  "datum": "2026-10-14",
  "status": "klaar",
  "keuze": 0,
- "versie": 1,
+ "versie": 2,
  "opties": [
   {
    "rubriek": "Op deze dag",
    "titel": " D66 opgericht",
    "caption": "Precies 60 jaar geleden werd D66 opgericht in Hotel Krasnapolsky in Amsterdam, onder leiding van Hans van Mierlo. 🗳️ Swipe voor de legendarische verkiezingsspot met Hans van Mierlo. 👉\n\n60 jaar D66: is de partij nog trouw aan haar oorspronkelijke idealen, of is ze die onderweg kwijtgeraakt? 👇\n\n#nostalgiemagie #vroeger #D66 #politiek #geschiedenis",
    "afbeeldingen": [
-    "2026-10-14-o1-1.jpg"
+    "2026-10-14-o1-v2-1.jpg"
    ],
    "slides": [
     {
@@ -88,7 +88,7 @@
   }
  ],
  "afbeeldingen": [
-  "2026-10-14-o1-1.jpg"
+  "2026-10-14-o1-v2-1.jpg"
  ],
  "aangepast": "2026-10-10T11:42+02:00"
 }
