@@ -1,7 +1,7 @@
 {
  "datum": "2026-10-13",
- "status": "kiezen",
- "keuze": null,
+ "status": "klaar",
+ "keuze": 2,
  "versie": 1,
  "opties": [
   {
@@ -50,8 +50,8 @@
   },
   {
    "rubriek": "Op deze dag",
-   "titel": "Eerste nine-darter op tv gegooid",
-   "caption": "In 1984 gooide John Lowe de allereerste nine-darter ooit op televisie. 🎯 Darts zat toen al in veel huiskamers en cafés. Kijk jij nog weleens naar darts, of is het niks voor jou?\n\n#nostalgie #vroeger #darts #johnlowe #jaren80 #sportgeschiedenis #televisie",
+   "titel": "voor het eerst een nine-darter op televisie",
+   "caption": "Precies 42 jaar geleden gooit de Engelsman John Lowe de allereerste nine-darter ooit op televisie 🎯  Swipe voor de beelden! 👉\n\nDarts was in 1984 al in veel huiskamers en cafés te zien en is daarna alleen maar populairder geworden. Wat is jouw favoriete dartsmoment allertijden?\n\n#nostalgiemagie #vroeger #darts #johnlowe #jaren80",
    "afbeeldingen": [
     "2026-10-13-o3-1.jpg"
    ],
@@ -60,15 +60,35 @@
      "template": "dag.html",
      "waarden": {
       "datum": "Dinsdag 13 oktober 1984",
-      "kop": "Eerste nine-darter op tv gegooid",
-      "ondertitel": "John Lowe gooide in 1984 de allereerste nine-darter op televisie.",
+      "kop": "voor het eerst een nine-darter op televisie",
+      "ondertitel": "John Lowe gooit in 1984 de allereerste nine-darter op televisie. Een historisch moment voor de sport.",
       "jaren": 42,
       "jaar": 1984,
-      "foto": ""
+      "foto": "2026-10-13-eigen-1.png"
      }
     }
    ],
    "controle": "Wikipedia (1984): John Lowe gooit de allereerste nine-darter ooit op televisie."
   }
- ]
+ ],
+ "rubriek": "Op deze dag",
+ "titel": "voor het eerst een nine-darter op televisie",
+ "caption": "Precies 42 jaar geleden gooit de Engelsman John Lowe de allereerste nine-darter ooit op televisie 🎯  Swipe voor de beelden! 👉\n\nDarts was in 1984 al in veel huiskamers en cafés te zien en is daarna alleen maar populairder geworden. Wat is jouw favoriete dartsmoment allertijden?\n\n#nostalgiemagie #vroeger #darts #johnlowe #jaren80",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Dinsdag 13 oktober 1984",
+    "kop": "voor het eerst een nine-darter op televisie",
+    "ondertitel": "John Lowe gooit in 1984 de allereerste nine-darter op televisie. Een historisch moment voor de sport.",
+    "jaren": 42,
+    "jaar": 1984,
+    "foto": "2026-10-13-eigen-1.png"
+   }
+  }
+ ],
+ "afbeeldingen": [
+  "2026-10-13-o3-1.jpg"
+ ],
+ "aangepast": "2026-10-10T11:05+02:00"
 }
