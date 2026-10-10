@@ -9,6 +9,8 @@ import sys
 import time
 import traceback
 
+import requests
+
 import config, noodrem, render, sources, telegram, writer
 
 JUBILEA = (25, 40, 50, 60, 75, 100)
@@ -28,6 +30,16 @@ def bewaar_state(state):
 
 def foto_credit(foto):
     return f"Foto: {foto['maker']} / Nationaal Archief ({foto['licentie']})"
+
+
+def bewaar_foto(foto, d):
+    """Downloadt de archieffoto naast de post, zodat hij later opnieuw te gebruiken en aan te passen is."""
+    naam = f"{d.isoformat()}-foto.jpg"
+    r = requests.get(foto["url"], headers=sources.UA, timeout=60)
+    r.raise_for_status()
+    with open(os.path.join(config.POSTS_DIR, naam), "wb") as f:
+        f.write(r.content)
+    return naam
 
 
 def maak_dag(d, state):
@@ -50,18 +62,17 @@ def maak_dag(d, state):
     except Exception as ex:
         print(f"Geen foto gevonden: {ex}")
 
+    fotobestand = ""
     if foto:
-        foto_block = f'<div class="foto" style="background-image:url(\'{html.escape(foto["url"])}\')"></div>'
-        bron_beeld = f"Bron: Wikipedia · {foto_credit(foto)}"
-    else:
-        foto_block = f'<div class="foto leeg"><span>{e["jaar"]}</span></div>'
-        bron_beeld = "Bron: Wikipedia"
-
+        try:
+            fotobestand = bewaar_foto(foto, d)
+        except Exception as ex:
+            print(f"Foto downloaden mislukt: {ex}")
+            foto = None
     waarden = {
         "datum": f"{config.DAGEN[d.weekday()].capitalize()} {config.datum_lang(d)} {e['jaar']}",
-        "kop": uit["kop"], "kop_size": render.kopgrootte(uit["kop"]),
-        "ondertitel": uit["ondertitel"], "jaren": d.year - e["jaar"],
-        "foto_block": foto_block, "bron": bron_beeld,
+        "kop": uit["kop"], "ondertitel": uit["ondertitel"], "jaren": d.year - e["jaar"], "jaar": e["jaar"],
+        "foto": fotobestand,
     }
     controle = f"Wikipedia ({e['jaar']}): {e['tekst']}\n{bron}"
     if foto:
@@ -113,8 +124,8 @@ def maak_raad(d, state):
     opties = [juist] + fout
     random.shuffle(opties)
     letter = "ABC"[opties.index(juist)]
-    vraag = {"foto_url": foto["url"], "hint": uit["hint"], "a": opties[0], "b": opties[1], "c": opties[2]}
-    antwoord = {"jaar": juist, "letter": letter, "uitleg": uit.get("uitleg", ""), "credit": foto_credit(foto)}
+    vraag = {"foto": bewaar_foto(foto, d), "hint": uit["hint"], "a": opties[0], "b": opties[1], "c": opties[2]}
+    antwoord = {"jaar": juist, "letter": letter, "uitleg": uit.get("uitleg", "")}
     controle = f"Juiste jaar volgens archief: {juist} (antwoord {letter})\n{foto['beschrijving'] or 'geen beschrijving'}\n{foto['pagina']}"
     return {"rubriek": "Raad het jaar", "slides": [("raad.html", vraag), ("raad-antwoord.html", antwoord)],
             "uit": uit, "bronregels": [foto_credit(foto)], "controle": controle}
@@ -158,7 +169,8 @@ def maak_post(d, state):
     uit = post["uit"]
     data = {"datum": d.isoformat(), "rubriek": post["rubriek"],
             "titel": uit.get("kop") or uit.get("naam") or uit.get("hint") or "",
-            "caption": caption, "afbeeldingen": [os.path.basename(p) for p in paden], "status": "klaar"}
+            "caption": caption, "afbeeldingen": [os.path.basename(p) for p in paden], "status": "klaar",
+            "slides": [{"template": t, "waarden": w} for t, w in post["slides"]]}
     noodrem.bewaar(d.isoformat(), data)
     bewaar_state(state)
     try:

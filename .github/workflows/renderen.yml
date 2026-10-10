@@ -1,0 +1,43 @@
+name: Opnieuw maken (na aanpassing)
+
+on:
+  workflow_dispatch:
+    inputs:
+      datum:
+        description: "Datum van de post (JJJJ-MM-DD)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nostalgiemagie
+
+jobs:
+  renderen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installeren
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+      - name: Visual opnieuw maken
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          EDITOR_URL: ${{ vars.EDITOR_URL }}
+          DATUM: ${{ github.event.inputs.datum }}
+        run: python renderen.py
+      - name: Opslaan
+        if: always()
+        run: |
+          git config user.name "nostalgiemagie-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A docs
+          git diff --cached --quiet || git commit -m "Aangepast: ${{ github.event.inputs.datum }}"
+          git pull --rebase
+          git push

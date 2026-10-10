@@ -35,6 +35,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PAGES_URL: ${{ vars.PAGES_URL }}
+          EDITOR_URL: ${{ vars.EDITOR_URL }}
           DATUM: ${{ github.event.inputs.datum }}
           DAGEN: ${{ github.event.inputs.dagen }}
         run: python prepare.py
@@ -43,7 +44,7 @@ jobs:
         run: |
           git config user.name "nostalgiemagie-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs used.json
+          git add -A docs used.json
           git diff --cached --quiet || git commit -m "Posts gepland $(TZ=Europe/Amsterdam date +%F)"
           git pull --rebase
           git push

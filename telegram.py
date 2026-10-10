@@ -5,7 +5,7 @@ import re
 
 import requests
 
-from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, dag_label
+from config import EDITOR_URL, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, dag_label
 
 API = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
 SKIP_WOORDEN = ("overslaan", "skip", "stop")
@@ -19,7 +19,10 @@ def _post(methode, **kwargs):
 
 
 def _knop(datum: str) -> str:
-    return json.dumps({"inline_keyboard": [[{"text": "Overslaan", "callback_data": f"skip:{datum}"}]]})
+    rij = [{"text": "Overslaan", "callback_data": f"skip:{datum}"}]
+    if EDITOR_URL.startswith("https://"):
+        rij.append({"text": "Aanpassen", "url": f"{EDITOR_URL}#d{datum.replace('-', '')}"})
+    return json.dumps({"inline_keyboard": [rij]})
 
 
 def bericht(tekst: str, knop_datum: str | None = None):
@@ -47,7 +50,7 @@ def voorbeeld(afbeeldingen: list, caption: str, datum: str, rubriek: str, contro
     bericht(
         f"Post voor {dag_label(d)} ({rubriek}) staat klaar en gaat die dag om 18.00 uur online.\n\n"
         f"Controleer even:\n{controle}\n\n"
-        "Klopt er iets niet? Tik op Overslaan.",
+        "Niet blij? Tik op Aanpassen om tekst of foto te wijzigen, of op Overslaan.",
         knop_datum=datum,
     )
 

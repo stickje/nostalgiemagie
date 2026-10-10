@@ -19,6 +19,9 @@ IG_API_VERSION = os.environ.get("IG_API_VERSION", "v23.0")
 # bijvoorbeeld https://stickje.github.io/nostalgiemagie
 PAGES_URL = os.environ.get("PAGES_URL", "").rstrip("/")
 
+# Editor (claude.ai-artifact) waar je een post kunt aanpassen. De knop 'Aanpassen' in Telegram linkt hierheen.
+EDITOR_URL = (os.environ.get("EDITOR_URL") or "https://claude.ai/artifact/4JHiFwXeP8KDqfyTT9ijXU").strip()
+
 # Proefmodus: alles draait, maar er wordt niets op Instagram geplaatst.
 DRY_RUN = (os.environ.get("DRY_RUN") or "true").lower() in ("1", "true", "ja", "yes")
 
