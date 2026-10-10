@@ -1,13 +1,13 @@
 {
  "datum": "2026-10-15",
- "status": "kiezen",
- "keuze": null,
+ "status": "klaar",
+ "keuze": 0,
  "versie": 1,
  "opties": [
   {
    "rubriek": "Op deze dag",
-   "titel": "Eerste Free Record Shop opent in Schiedam",
-   "caption": "Op 15 oktober 1971 opent Hans Breukhoven de eerste Free Record Shop aan het Broersveld in Schiedam. Dat is vandaag precies 55 jaar geleden 🎶 Welke plaat of cd kocht jij daar als eerste?\n\n#nostalgie #vroeger #freerecordshop #schiedam #platenwinkel #jaren70 #muziek",
+   "titel": "Eerste Free Record Shop geopend",
+   "caption": "Precies 55 jaar geleden opende Hans Breukhoven de eerste Free Record Shop aan het Broersveld in Schiedam. 🎶 De platenzaak groeide uit tot een iconische winkelketen, en sloot in 2014 definitief de deuren.\n\nGing jij wel eens plaatjes luisteren bij de Free Record Shop?👇\n\n(📸 Foto: Erfgoed Leiden en Omstreken)\n\n#nostalgiemagie #vroeger #freerecordshop",
    "afbeeldingen": [
     "2026-10-15-o1-1.jpg"
    ],
@@ -16,11 +16,11 @@
      "template": "dag.html",
      "waarden": {
       "datum": "Donderdag 15 oktober 1971",
-      "kop": "Eerste Free Record Shop opent in Schiedam",
-      "ondertitel": "Hans Breukhoven opent in 1971 de eerste winkel aan het Broersveld.",
+      "kop": "Eerste Free Record Shop geopend",
+      "ondertitel": "Ter illustratie: de oude Free Record Shop aan de Haarlemmerstraat in Leiden. ",
       "jaren": 55,
       "jaar": 1971,
-      "foto": ""
+      "foto": "2026-10-15-eigen-1.jpg"
      }
     }
    ],
@@ -70,5 +70,25 @@
    ],
    "controle": "Wikipedia (2011): Het Nederlands honkbalteam behaalt voor de eerste keer in de geschiedenis de wereldtitel door Cuba met 2-1 te verslaan in Panama-Stad."
   }
- ]
+ ],
+ "rubriek": "Op deze dag",
+ "titel": "Eerste Free Record Shop geopend",
+ "caption": "Precies 55 jaar geleden opende Hans Breukhoven de eerste Free Record Shop aan het Broersveld in Schiedam. 🎶 De platenzaak groeide uit tot een iconische winkelketen, en sloot in 2014 definitief de deuren.\n\nGing jij wel eens plaatjes luisteren bij de Free Record Shop?👇\n\n(📸 Foto: Erfgoed Leiden en Omstreken)\n\n#nostalgiemagie #vroeger #freerecordshop",
+ "slides": [
+  {
+   "template": "dag.html",
+   "waarden": {
+    "datum": "Donderdag 15 oktober 1971",
+    "kop": "Eerste Free Record Shop geopend",
+    "ondertitel": "Ter illustratie: de oude Free Record Shop aan de Haarlemmerstraat in Leiden. ",
+    "jaren": 55,
+    "jaar": 1971,
+    "foto": "2026-10-15-eigen-1.jpg"
+   }
+  }
+ ],
+ "afbeeldingen": [
+  "2026-10-15-o1-1.jpg"
+ ],
+ "aangepast": "2026-10-10T12:48+02:00"
 }
