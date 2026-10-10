@@ -2,14 +2,14 @@
  "datum": "2026-10-10",
  "status": "klaar",
  "keuze": 0,
- "versie": 1,
+ "versie": 2,
  "opties": [
   {
    "rubriek": "Op deze dag",
    "titel": "Nederland krijgt tien cijfers per telefoonnummer",
    "caption": "Op 10 oktober 1995 werden alle Nederlandse telefoonnummers tiencijferig, onder de naam Operatie Decibel 📞 Alle huishoudens ontvingen een omnummergids. Ook was een omnummerapparaat te koop, genaamd de 'numculator'. \n\nMoest jij je eigen nummer opnieuw leren? 😮\n\nnostalgie #vroeger #jarennegentig #telefoon",
    "afbeeldingen": [
-    "2026-10-10-o1-1.jpg"
+    "2026-10-10-o1-v2-1.jpg"
    ],
    "slides": [
     {
@@ -88,7 +88,7 @@
   }
  ],
  "afbeeldingen": [
-  "2026-10-10-o1-1.jpg"
+  "2026-10-10-o1-v2-1.jpg"
  ],
  "aangepast": "2026-10-10T10:18+02:00"
 }
